@@ -14,6 +14,9 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   },
+  "include": [
+    "config/jest/setupTest.ts"
+  ],
   "exclude": [
     "node_modules"
   ],
