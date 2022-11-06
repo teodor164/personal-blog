@@ -5,5 +5,9 @@
   "Main page": "Pagina principală",
   "Language": "Română",
   "Loading...": "Încărcare...",
-  "toggle": "comuta"
+  "toggle": "comuta",
+  "Page not found": "Page nu a fost găsită",
+  "Something went wrong": "S-a produs o eroare",
+  "Reload page": "Reload page",
+  "Throw error": "Throw error"
 }
