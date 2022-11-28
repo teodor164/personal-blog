@@ -6,9 +6,11 @@
   "Language": "Română",
   "Loading...": "Încărcare...",
   "toggle": "comuta",
-  "Page not found": "Page nu a fost găsită",
+  "Page not found": "Pagina nu a fost găsită",
   "Something went wrong": "S-a produs o eroare",
   "Reload page": "Reload page",
   "Throw error": "Throw error",
-  "Lang": "RO"
+  "Lang": "RO",
+  "Login": "Autentificăte"
+
 }
