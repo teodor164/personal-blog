@@ -10,7 +10,7 @@ interface NavbarProps {
 }
 
 export const Navbar: FC<NavbarProps> = ({ className }) => {
-    const { t } = useTranslation('main');
+    const { t } = useTranslation();
 
     const [isAuthModal, setIsAuthModal] = useState<boolean>();
 
