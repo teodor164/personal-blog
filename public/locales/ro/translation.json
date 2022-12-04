@@ -11,6 +11,7 @@
   "Reload page": "Reload page",
   "Throw error": "Throw error",
   "Lang": "RO",
-  "Login": "Autentificăte"
-
+  "Login": "Autentificăte",
+  "increment": "increment",
+  "decrement": "decrement"
 }

@@ -11,5 +11,7 @@
   "Reload page": "Обновить страницу",
   "Throw error": "Throw error",
   "Lan": "Рус",
-  "Login": "Войти"
+  "Login": "Войти",
+  "increment": "increment",
+  "decrement": "decrement"
 }
