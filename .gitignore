@@ -4,3 +4,4 @@ build
 extractedTranslations
 package-lock.json
 storybook-static
+.run
