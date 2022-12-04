@@ -13,5 +13,7 @@
   "Lang": "RO",
   "Login": "Autentificăte",
   "increment": "increment",
-  "decrement": "decrement"
+  "decrement": "decrement",
+  "Insert username": "Insert username",
+  "Insert password": "Insert password"
 }
