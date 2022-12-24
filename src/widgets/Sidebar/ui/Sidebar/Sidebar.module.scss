@@ -23,33 +23,14 @@
 }
 
 .items {
-    margin-left: 2rem;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 1.25rem;
     display: flex;
     flex-direction: column;
 }
 
-.item {
-    margin-top: 0.625rem;
-    display: flex;
-    align-items: center;
-}
-
-.link {
-    margin-left: 0.625rem;
-    opacity: 1;
-}
-
-.icon {
-    fill: var(--inverted-primary-color);
-}
-
 .collapsed {
     width: var(--sidebar-width-collapsed);
-
-    .link {
-        opacity: 0;
-        width: 0;
-        transition: opacity 0.2s;
-    }
 }

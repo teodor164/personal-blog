@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { Button } from 'shared/ui/Button';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 import { counterActions } from '../model/slice/counterSlice';
 
@@ -9,7 +10,7 @@ interface CounterProps {
 }
 
 export const Counter: FC<CounterProps> = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const { t } = useTranslation();
 
     const counterValue = useSelector(getCounterValue);
