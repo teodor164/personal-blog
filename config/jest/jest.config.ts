@@ -9,6 +9,7 @@ export default {
     // All imported modules in your tests should be mocked automatically
     globals: {
         __IS_DEV__: true,
+        __API__: '',
     },
 
     clearMocks: true,
