@@ -2,5 +2,12 @@
   "Profile": "Profile",
   "Edit": "Edit",
   "First name": "First name",
-  "Last name": "Last name"
+  "Last name": "Last name",
+  "Some error occurred": "Some error occurred",
+  "Try to reload the page": "Try to reload the page",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "City": "City",
+  "Username": "Username",
+  "Avatar link": "Avatar link"
 }
