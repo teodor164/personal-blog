@@ -13,22 +13,22 @@
   ],
   "comments": [
     {
-      "id": 1,
+      "id": "1",
       "body": "some comment",
-      "postId": 1
+      "postId": "1"
     }
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "admin",
       "password": "123"
     }
   ],
   "profile": {
-    "fist": "Maxim",
-    "last": "Rogozneac",
-    "age": 22,
+    "first": "Maxim",
+    "lastname": "Rogozneac",
+    "age": 24,
     "currency": "MDL",
     "country": "Moldova",
     "city": "Chisinau",
