@@ -9,5 +9,10 @@
   "Save": "Save",
   "City": "City",
   "Username": "Username",
-  "Avatar link": "Avatar link"
+  "Avatar link": "Avatar link",
+  "Server error on saving data": "Server error on saving data",
+  "Incorrect country": "Incorrect country",
+  "Incorrect age": "Incorrect age",
+  "No user data": "No user data",
+  "Firstname and lastname are required": "Firstname and lastname are required"
 }
