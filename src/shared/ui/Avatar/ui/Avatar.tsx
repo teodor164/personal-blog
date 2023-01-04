@@ -5,7 +5,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Avatar.module.scss';
 
 interface AvatarProps {
-    src: string
+    src?: string
     className?: string
     size?: number
     alt?: string
