@@ -12,7 +12,6 @@ import { Page } from 'shared/ui/Page';
 import { getArticlesPageView } from '../../model/selectors/getArticlesPageView/getArticlesPageView';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { articlePageActions, articlePageReducer, getArticles } from '../../model/slices/articlePageSlice';
-import cls from './ArticlesPage.module.scss';
 import { getArticlesPageIsLoading } from '../../model/selectors/getArticlesPageIsLoading/getArticlesPageIsLoading';
 
 interface ArticlesPageProps {
