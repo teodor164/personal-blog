@@ -84,7 +84,7 @@ const articleMock = {
 } as Article;
 
 export default {
-    title: 'entities/ArticleListItem',
+    title: 'entities/Article/ArticleListItem',
     component: ArticleListItem,
     argTypes: {
         backgroundColor: { control: 'color' },

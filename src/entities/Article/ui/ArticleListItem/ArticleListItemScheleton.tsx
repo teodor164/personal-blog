@@ -13,8 +13,6 @@ interface ArticleListItemSkeletonProps {
 export const ArticleListItemSkeleton = memo((props: ArticleListItemSkeletonProps) => {
     const { className, view } = props;
 
-    console.log(view);
-
     if (view === ArticleView.BIG) {
         return (
             <div className={classNames('', {}, [className, cls[view]])}>

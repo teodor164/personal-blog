@@ -88,7 +88,7 @@ const articlesMock = new Array(16).fill(0).map((item, index) => ({
 }));
 
 export default {
-    title: 'entities/ArticleList',
+    title: 'entities/Article/ArticleList',
     component: ArticleList,
     argTypes: {
         backgroundColor: { control: 'color' },
