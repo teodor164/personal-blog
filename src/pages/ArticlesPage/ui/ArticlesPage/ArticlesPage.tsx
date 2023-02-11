@@ -5,11 +5,10 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/Dynamic
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useSelector } from 'react-redux';
-import { getArticlesPagePageNumber } from 'pages/ArticlesPage/model/selectors/getArticlesPagePageNumber/getArticlesPagePageNumber';
 import { Page } from 'shared/ui/Page';
-import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { getArticlesPageView } from '../../model/selectors/getArticlesPageView/getArticlesPageView';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { articlePageActions, articlePageReducer, getArticles } from '../../model/slices/articlePageSlice';
 import { getArticlesPageIsLoading } from '../../model/selectors/getArticlesPageIsLoading/getArticlesPageIsLoading';
 
@@ -29,13 +28,9 @@ const
         const articles = useSelector(getArticles.selectAll);
         const isLoading = useSelector(getArticlesPageIsLoading);
         const view = useSelector(getArticlesPageView);
-        const page = useSelector(getArticlesPagePageNumber);
 
         useInitialEffect(() => {
-            if (__PROJECT__ !== 'storybook') {
-                dispatch(articlePageActions.initState());
-                dispatch(fetchArticlesList({ page }));
-            }
+            dispatch(initArticlesPage());
         });
 
         const onChangeView = useCallback((view: ArticleView) => {
@@ -49,7 +44,7 @@ const
         }, [dispatch]);
 
         return (
-            <DynamicModuleLoader reducers={reducers}>
+            <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
                 <Page
                     className={classNames('', {}, [className])}
                     onScrollEnd={onLoadNextPart}

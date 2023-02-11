@@ -12,8 +12,6 @@ export const fetchNextArticlesPage = createAsyncThunk<void,
         'articlesPage/fetchNextArticlesPage',
         async (_, thunkApi) => {
             const {
-                extra,
-                rejectWithValue,
                 getState,
                 dispatch,
             } = thunkApi;
