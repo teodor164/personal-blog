@@ -11,22 +11,19 @@ import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
 import { Icon } from 'shared/ui/Icon';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
-import {
-    getArticleDetailsData,
-    getArticleDetailsError,
-    getArticleDetailsIsLoading,
-} from '../../model/selectors/articleDetails';
+import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from '../../model/selectors/articleDetails';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
-    className?: string
-    id: string
+    className?: string;
+    id: string;
 }
 
 const reducers: ReducersList = {
@@ -35,7 +32,10 @@ const reducers: ReducersList = {
 
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const { t } = useTranslation('articleDetails');
-    const { className, id } = props;
+    const {
+        className,
+        id,
+    } = props;
     const dispatch = useAppDispatch();
 
     const isLoading = useSelector(getArticleDetailsIsLoading);
@@ -49,7 +49,6 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                 <ArticleCodeBlockComponent
                     key={block.id}
                     block={block}
-                    className={cls.block}
                 />
             );
         case ArticleBlockType.IMAGE:
@@ -57,7 +56,6 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                 <ArticleImageBlockComponent
                     key={block.id}
                     block={block}
-                    className={cls.block}
                 />
             );
         case ArticleBlockType.TEXT:
@@ -65,7 +63,6 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                 <ArticleTextBlockComponent
                     key={block.id}
                     block={block}
-                    className={cls.block}
                 />
             );
         default:
@@ -83,14 +80,14 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         content = (
             <>
                 <Skeleton width={200} height={200} border="50%" className={cls.avatar} />
-                <Skeleton width={300} height={32} className={cls.title} />
-                <Skeleton width={600} height={24} className={cls.skeleton} />
-                <Skeleton width="100%" height={200} className={cls.skeleton} />
-                <Skeleton width="100%" height={200} className={cls.skeleton} />
-                <Skeleton width="100%" height={200} className={cls.skeleton} />
-                <Skeleton width="100%" height={200} className={cls.skeleton} />
-                <Skeleton width="100%" height={200} className={cls.skeleton} />
-                <Skeleton width="100%" height={200} className={cls.skeleton} />
+                <Skeleton width={300} height={32} />
+                <Skeleton width={600} height={24} />
+                <Skeleton width="100%" height={200} />
+                <Skeleton width="100%" height={200} />
+                <Skeleton width="100%" height={200} />
+                <Skeleton width="100%" height={200} />
+                <Skeleton width="100%" height={200} />
+                <Skeleton width="100%" height={200} />
             </>
         );
     } else if (error) {
@@ -103,27 +100,28 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     } else {
         content = (
             <>
-                <div className={cls.avatarWrapper}>
+                <HStack max>
                     <Avatar
                         size={200}
                         src={article?.img}
                         className={cls.avatar}
                     />
-                </div>
-                <Text
-                    className={cls.title}
-                    title={article?.title}
-                    text={article?.subtitle}
-                    size={TextSize.L}
-                />
-                <div className={cls.articleInfo}>
-                    <Icon Svg={EyeIcon} className={cls.icon} />
+                </HStack>
+                <VStack gap="4" max>
+                    <Text
+                        title={article?.title}
+                        text={article?.subtitle}
+                        size={TextSize.L}
+                    />
+                </VStack>
+                <HStack gap="8" align="center">
+                    <Icon Svg={EyeIcon} />
                     <Text text={String(article?.views)} />
-                </div>
-                <div className={cls.articleInfo}>
-                    <Icon Svg={CalendarIcon} className={cls.icon} />
+                </HStack>
+                <HStack gap="8" align="center">
+                    <Icon Svg={CalendarIcon} />
                     <Text text={String(article?.createdAt)} />
-                </div>
+                </HStack>
                 {article?.blocks.map(renderBlock)}
             </>
 
@@ -132,9 +130,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(cls.ArticleDetails, {}, [className])}>
+            <VStack gap="16" max className={classNames(cls.ArticleDetails, {}, [className])}>
                 {content}
-            </div>
+            </VStack>
         </DynamicModuleLoader>
     );
 });

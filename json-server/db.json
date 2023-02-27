@@ -601,6 +601,36 @@
       "userId": "1",
       "text": "new comment for economy article",
       "id": "JBwOomj"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "test 123",
+      "id": "HKIpKns"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "test 415",
+      "id": "oWgE-69"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "test 124",
+      "id": "XxJmR6S"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "add comment test",
+      "id": "r857iU2"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "test 15487",
+      "id": "7YVuV1u"
     }
   ],
   "users": [
@@ -629,7 +659,7 @@
       "country": "Belarus",
       "city": "Moscow",
       "username": "admin213",
-      "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200"
+      "avatar": "https://blogs.vmware.com/security/files/2020/05/haking_is_the_new_espionage.jpg"
     },
     {
       "id": "2",
