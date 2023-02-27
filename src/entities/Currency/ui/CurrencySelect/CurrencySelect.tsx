@@ -1,7 +1,7 @@
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Select } from 'shared/ui/Select';
-import { Currency } from 'entities/Currency';
+import { Currency } from '../../model/types/currency';
 
 interface CurrencySelectProps {
     value?: string

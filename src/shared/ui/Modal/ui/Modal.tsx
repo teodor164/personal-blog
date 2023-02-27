@@ -2,7 +2,7 @@ import React, {
     FC, MutableRefObject, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import { Portal } from 'shared/ui/Portal';
+import { Portal } from '../../Portal';
 import cls from './Modal.module.scss';
 
 interface ModalProps {

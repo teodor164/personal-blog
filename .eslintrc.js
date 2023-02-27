@@ -22,6 +22,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
+        'feature-sliced-design-path-checker',
     ],
     rules: {
         'no-console': 'off',
@@ -59,6 +60,7 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
+        'feature-sliced-design-path-checker/path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,

@@ -1,7 +1,7 @@
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Select } from 'shared/ui/Select';
-import { Country } from 'entities/Country';
+import { Country } from '../../model/types/country';
 
 interface CountrySelectProps {
     value?: string

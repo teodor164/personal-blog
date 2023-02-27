@@ -1,9 +1,8 @@
-import {
-    profileActions, profileReducer, ProfileSchema, updateProfileData,
-} from 'entities/Profile';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import { ValidateProfileError } from 'entities/Profile/model/types/profile';
+import { profileActions, profileReducer } from '../slice/profileSlice';
+import { updateProfileData } from '../services/updateProfileData/updateProfileData';
+import { ValidateProfileError, ProfileSchema } from '../types/profile';
 
 const data = {
     age: 24,
