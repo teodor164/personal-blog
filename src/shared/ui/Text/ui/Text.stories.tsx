@@ -70,3 +70,17 @@ SizeL.args = {
     text: 'Description Description Description Description Description',
     size: TextSize.L,
 };
+
+export const SizeM = Template.bind({});
+SizeM.args = {
+    title: 'Tile lorem',
+    text: 'Description Description Description Description Description',
+    size: TextSize.M,
+};
+
+export const SizeS = Template.bind({});
+SizeS.args = {
+    title: 'Tile lorem',
+    text: 'Description Description Description Description Description',
+    size: TextSize.S,
+};
