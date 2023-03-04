@@ -35,7 +35,7 @@ export const CurrencySelect: FC<CurrencySelectProps> = (props) => {
             label={t('Select Currency')}
             onChange={onChangeHandler}
             readonly={readonly}
-            direction="top"
+            direction="top right"
         />
     );
 };

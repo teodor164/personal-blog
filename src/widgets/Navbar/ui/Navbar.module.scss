@@ -7,8 +7,11 @@
     align-items: center;
 }
 
-.loginBtn {
+.loginBtn,
+.dropdown
+{
     margin-right: 1rem;
+    white-space: nowrap;
 }
 .appName {
     margin-right: auto;

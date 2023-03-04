@@ -7,8 +7,9 @@ import { LoginModal } from 'features/AuthByUsername';
 import { useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Dropdown } from 'shared/ui/Dropdown';
+import { Avatar } from 'shared/ui/Avatar';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -43,20 +44,25 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     title={t('Ulbi TV App')}
                     className={cls.appName}
                 />
-                <AppLink
-                    theme={AppLinkTheme.SECONDARY}
-                    to={RoutePath.article_create}
-                    className={cls.createLink}
-                >
-                    {t('Create new article')}
-                </AppLink>
-                <Button
-                    theme={ButtonTheme.CLEAR_INVERTED}
-                    onClick={onLogout}
-                    className={cls.loginBtn}
-                >
-                    {t('Logout')}
-                </Button>
+                <Dropdown
+                    className={cls.dropdown}
+                    items={[
+                        {
+                            content: t('My profile'),
+                            href: RoutePath.profile + authData.id,
+                        },
+                        {
+                            content: t('Create new article'),
+                            href: RoutePath.article_create,
+                        },
+                        {
+                            content: t('Logout'),
+                            onClick: onLogout,
+                        },
+                    ]}
+                    trigger={<Avatar size={30} src={authData.avatar} />}
+                    direction="bottom left"
+                />
             </header>
         );
     }
