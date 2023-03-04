@@ -1,6 +1,6 @@
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ListBox } from 'shared/ui/ListBox/ui/ListBox';
+import { ListBox } from 'shared/ui/ListBox';
 import { Country } from '../../model/types/country';
 
 interface CountrySelectProps {
