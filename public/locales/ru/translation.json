@@ -25,5 +25,8 @@
   "No comments ": "No comments ",
   "Insert comment text": "Insert comment text",
   "Send": "Send",
-  "Error occurred on loading articles": "Error occurred on loading articles"
+  "Error occurred on loading articles": "Error occurred on loading articles",
+  "Admin Panel": "Admin Panel",
+  "Admin Panel Page": "Admin Panel Page",
+  "You don't have access to this page": "You don't have access to this page"
 }
