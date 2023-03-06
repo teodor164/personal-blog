@@ -3,6 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
+// @ts-ignore
 import path from 'path';
 
 export default {

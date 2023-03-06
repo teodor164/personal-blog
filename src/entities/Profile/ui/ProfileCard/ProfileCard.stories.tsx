@@ -32,5 +32,16 @@ Light.args = {
 };
 
 export const Dark = Template.bind({});
-Dark.args = {};
+Dark.args = {
+    data: {
+        age: 24,
+        country: Country.Moldova,
+        lastname: 'Rogozneac',
+        first: 'Maxim',
+        currency: Currency.RON,
+        username: 'admin',
+        avatar,
+        city: 'Chisianu',
+    },
+};
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

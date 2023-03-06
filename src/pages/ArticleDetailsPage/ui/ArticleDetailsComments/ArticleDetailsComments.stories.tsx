@@ -7,7 +7,7 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDeco
 import { ArticleDetailsComments } from './ArticleDetailsComments';
 
 export default {
-    title: 'pages/ArticleDetailsComments',
+    title: 'pages/ArticleDetailsPage/ArticleDetailsComments',
     component: ArticleDetailsComments,
     argTypes: {
         backgroundColor: { control: 'color' },

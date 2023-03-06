@@ -22,7 +22,7 @@ import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/get
 
 interface EditableProfileCardProps {
     className?: string;
-    id: string
+    id?: string
 }
 
 const reducers: ReducersList = {
