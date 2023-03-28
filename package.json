@@ -109,7 +109,9 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
+    "@react-spring/web": "^9.7.1",
     "@reduxjs/toolkit": "^1.8.0",
+    "@use-gesture/react": "^10.2.25",
     "axios": "^1.2.0",
     "i18next": "^21.6.11",
     "i18next-browser-languagedetector": "^6.1.3",
