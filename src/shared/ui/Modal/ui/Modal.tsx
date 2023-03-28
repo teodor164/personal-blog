@@ -1,17 +1,16 @@
-import React, {
-    FC, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState,
-} from 'react';
+import React, { FC, ReactNode } from 'react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import { useModal } from 'shared/lib/hooks/useModal/useModal';
 import { Overlay } from '../../Overlay';
 import { Portal } from '../../Portal';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
-    className?: string
-    isOpen?: boolean
-    onClose?: () => void
-    lazy?: boolean
-    children: ReactNode
+    className?: string;
+    isOpen?: boolean;
+    onClose?: () => void;
+    lazy?: boolean;
+    children: ReactNode;
 }
 
 const ANIMATION_DELAY: number = 300;
@@ -25,42 +24,15 @@ export const Modal: FC<ModalProps> = (props) => {
         lazy,
     } = props;
 
-    const [isClosing, setIsClosing] = useState<boolean>(false);
-    const [isMounted, setIsMounted] = useState<boolean>(false);
-    const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
-
-    useEffect(() => {
-        if (isOpen) {
-            setIsMounted(true);
-        }
-    }, [isOpen]);
-
-    const closeHandler = useCallback(() => {
-        if (onClose) {
-            setIsClosing(true);
-            timerRef.current = setTimeout(() => {
-                onClose();
-                setIsClosing(false);
-            }, ANIMATION_DELAY);
-        }
-    }, [onClose]);
-
-    const onKeyDown = useCallback((e: KeyboardEvent) => {
-        if (e.key === 'Escape') {
-            closeHandler();
-        }
-    }, [closeHandler]);
-
-    useEffect(() => {
-        if (isOpen) {
-            window.addEventListener('keydown', onKeyDown);
-        }
-
-        return () => {
-            clearTimeout(timerRef.current);
-            window.removeEventListener('keydown', onKeyDown);
-        };
-    }, [isOpen, onKeyDown]);
+    const {
+        close: closeHandler,
+        isClosing,
+        isMounted,
+    } = useModal({
+        animationDelay: ANIMATION_DELAY,
+        isOpen,
+        onClose,
+    });
 
     const mods: Mods = {
         [cls.opened]: isOpen,
