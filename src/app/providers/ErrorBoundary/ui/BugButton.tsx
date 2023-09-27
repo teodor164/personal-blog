@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Button } from 'shared/ui/Button';
 import { useTranslation } from 'react-i18next';
+import { Button } from '@/shared/ui/Button';
 
 // Button for testing ErrorBoundary
 export const BugButton: FC = () => {

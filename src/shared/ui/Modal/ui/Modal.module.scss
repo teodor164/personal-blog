@@ -25,10 +25,10 @@
 .opened {
     opacity: 1;
     pointer-events: auto;
-    z-index: var(--modal-z-index);
 
     .content {
         transform: scale(1);
+        z-index: var(--modal-z-index);
     }
 }
 

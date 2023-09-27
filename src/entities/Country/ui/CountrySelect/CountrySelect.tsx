@@ -1,6 +1,6 @@
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ListBox } from 'shared/ui/Popups/ui/Listbox';
+import { ListBox } from '@/shared/ui/Popups/ui/Listbox';
 import { Country } from '../../model/types/country';
 
 interface CountrySelectProps {
@@ -31,8 +31,8 @@ export const CountrySelect: FC<CountrySelectProps> = (props) => {
             className={className}
             items={options}
             value={value}
-            defaultValue={t('Select Currency')}
-            label={t('Select Currency')}
+            defaultValue={t('Select Country')}
+            label={t('Select Country')}
             onChange={onChangeHandler}
             readonly={readonly}
             direction="top right"

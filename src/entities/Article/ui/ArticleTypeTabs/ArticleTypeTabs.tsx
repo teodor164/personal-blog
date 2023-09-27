@@ -1,7 +1,7 @@
 import { memo, useMemo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { TabItem, Tabs } from 'shared/ui/Tabs';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { TabItem, Tabs } from '@/shared/ui/Tabs';
 import { ArticleType } from '../../model/types/article';
 import cls from './ArticleTypeTabs.module.scss';
 
