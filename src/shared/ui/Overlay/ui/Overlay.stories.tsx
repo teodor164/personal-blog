@@ -7,7 +7,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { Overlay } from './Overlay';
 
 export default {
-    title: 'pages/Overlay',
+    title: 'shared/Overlay',
     component: Overlay,
     argTypes: {
         backgroundColor: { control: 'color' },

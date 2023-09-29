@@ -7,7 +7,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { Drawer } from './Drawer';
 
 export default {
-    title: 'pages/Drawer',
+    title: 'shared/Drawer',
     component: Drawer,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -17,9 +17,13 @@ export default {
 const Template: ComponentStory<typeof Drawer> = (args) => <Drawer {...args} />;
 
 export const Light = Template.bind({});
-Light.args = {};
+Light.args = {
+    isOpen: true,
+};
 Light.decorators = [StoreDecorator({})];
 
 export const Dark = Template.bind({});
-Dark.args = {};
+Dark.args = {
+    isOpen: true,
+};
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];

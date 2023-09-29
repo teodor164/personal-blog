@@ -1,8 +1,11 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import withMock from 'storybook-addon-mock';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Article } from '@/entities/Article';
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 
 const articleMock = {
     id: '1',
@@ -93,6 +96,7 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
+    decorators: [withMock],
     parameters: {
         mockData: [
             {
@@ -110,3 +114,7 @@ const Template: ComponentStory<typeof ArticleRecommendationsList> = (args) => <A
 export const Normal = Template.bind({});
 Normal.args = {};
 Normal.decorators = [StoreDecorator({})];
+
+export const DARK = Template.bind({});
+DARK.args = {};
+DARK.decorators = [StoreDecorator({}), ThemeDecorator(Theme.DARK)];

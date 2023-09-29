@@ -8,6 +8,7 @@ import cls from './Popover.module.scss';
 
 interface PopoverProps {
     className?: string;
+    panelClassName?: string
     trigger: ReactNode;
     direction?: DropdownDirection;
     children: ReactNode
@@ -19,6 +20,7 @@ export const Popover = (props: PopoverProps) => {
         trigger,
         direction = 'bottom right',
         children,
+        panelClassName,
     } = props;
 
     return (
@@ -31,7 +33,7 @@ export const Popover = (props: PopoverProps) => {
             </HeadlessPopover.Button>
 
             <HeadlessPopover.Panel
-                className={classNames(cls.panel, {}, [mapDirectionClass[direction]])}
+                className={classNames(cls.panel, {}, [mapDirectionClass[direction], panelClassName])}
             >
                 {children}
             </HeadlessPopover.Panel>

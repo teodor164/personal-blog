@@ -5,9 +5,17 @@ import { Theme } from '@/app/providers/ThemeProvider';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { NotificationItem } from './NotificationItem';
+import { NotificationSchema } from '../../model/types/NotificationSchema';
+
+const item: NotificationSchema = {
+    id: '1',
+    title: 'notification 1',
+    description: "You've got a notification 1",
+    href: '/',
+};
 
 export default {
-    title: 'pages/NotificationItem',
+    title: 'entities/Notification/NotificationItem',
     component: NotificationItem,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -17,9 +25,13 @@ export default {
 const Template: ComponentStory<typeof NotificationItem> = (args) => <NotificationItem {...args} />;
 
 export const Light = Template.bind({});
-Light.args = {};
+Light.args = {
+    item,
+};
 Light.decorators = [StoreDecorator({})];
 
 export const Dark = Template.bind({});
-Dark.args = {};
+Dark.args = {
+    item,
+};
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
