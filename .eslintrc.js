@@ -22,7 +22,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
-        'feature-sliced-design-path-checker',
+        'ulbi-tv-plugin',
     ],
     rules: {
         'no-console': 'off',
@@ -33,7 +33,6 @@ module.exports = {
         'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
-        'no-unused-vars': 'warn',
         'react/require-default-props': 'off',
         'react/jsx-props-no-spreading': 'warn',
         'react/function-component-definition': 'off',
@@ -41,6 +40,8 @@ module.exports = {
         'no-nested-ternary': 'off',
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': ['warn'],
         'no-underscore-dangle': 'off',
         'i18next/no-literal-string': ['error', {
             markupOnly: true,
@@ -60,7 +61,14 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
-        'feature-sliced-design-path-checker/path-checker': 'error',
+        'ulbi-tv-plugin/path-checker': ['error', { alias: '@' }],
+        'ulbi-tv-plugin/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
+            },
+        ],
         'linebreak-style': 'off',
     },
     globals: {
@@ -74,6 +82,7 @@ module.exports = {
             rules: {
                 'max-len': 'off',
                 'i18next/no-literal-string': 'off',
+                'react/jsx-props-no-spreading': 'off',
             },
         },
     ],

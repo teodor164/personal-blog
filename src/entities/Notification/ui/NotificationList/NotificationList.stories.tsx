@@ -6,7 +6,7 @@ import { Theme } from '@/app/providers/ThemeProvider';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { NotificationList } from './NotificationList';
-import { NotificationSchema } from '@/entities/Notification';
+import { NotificationSchema } from '../../model/types/NotificationSchema';
 
 const items: NotificationSchema[] = [
     {
