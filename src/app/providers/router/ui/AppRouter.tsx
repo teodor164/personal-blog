@@ -2,7 +2,7 @@ import React, { memo, Suspense, useCallback } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Loader } from '@/shared/ui/Loader';
 import { AuthRequire } from './AuthRequire';
-import { routeConfig } from '@/app/providers/router/config/routeConfig';
+import { routeConfig } from '../config/routeConfig';
 import { AppRouteProps } from '@/shared/types/router';
 
 const AppRouter = () => {
