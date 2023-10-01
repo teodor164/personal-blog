@@ -3,7 +3,6 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import avatar from '@/shared/assets/tests/storybook.png';
 import { ProfileCard } from './ProfileCard';
 import { Theme } from '@/shared/const/theme';
 
@@ -26,7 +25,7 @@ Light.args = {
         first: 'Maxim',
         currency: Currency.RON,
         username: 'admin',
-        avatar,
+        // avatar,
         city: 'Chisianu',
     },
 };
@@ -40,7 +39,7 @@ Dark.args = {
         first: 'Maxim',
         currency: Currency.RON,
         username: 'admin',
-        avatar,
+        // avatar,
         city: 'Chisianu',
     },
 };

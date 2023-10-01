@@ -4,7 +4,6 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import avatar from '@/shared/assets/tests/storybook.png';
 import ProfilePage from './ProfilePage';
 import { Theme } from '@/shared/const/theme';
 
@@ -29,7 +28,7 @@ Light.decorators = [StoreDecorator({
             first: 'Maxim',
             currency: Currency.RON,
             username: 'admin',
-            avatar,
+            // avatar,
             city: 'Chisianu',
         },
     },
@@ -46,7 +45,7 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
             first: 'Maxim',
             currency: Currency.RON,
             username: 'admin',
-            avatar,
+            // avatar,
             city: 'Chisianu',
         },
     },

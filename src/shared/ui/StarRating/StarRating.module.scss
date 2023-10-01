@@ -1,16 +1,16 @@
 .StarRating {
-  display: flex;
+    display: flex;
 }
 
 .starIcon {
-  fill: none;
-  cursor: pointer;
+    fill: none;
+    cursor: pointer;
 
-  &.hovered {
-    fill: var(--primary-color);
-  }
+    &.hovered {
+        fill: var(--primary-color);
+    }
 
-  &.selected {
-    cursor: auto;
-  }
+    &.selected {
+        cursor: auto;
+    }
 }
