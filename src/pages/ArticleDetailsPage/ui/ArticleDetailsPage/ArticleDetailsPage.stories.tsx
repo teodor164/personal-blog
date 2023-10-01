@@ -1,5 +1,6 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import withMock from 'storybook-addon-mock';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
@@ -8,7 +9,7 @@ import { ArticleBlockType } from '@/entities/Article/testing';
 import ArticleDetailsPage from './ArticleDetailsPage';
 import { Theme } from '@/shared/const/theme';
 
-export const article: Article = {
+const article: Article = {
     id: '1',
     title: 'Javascript news',
     subtitle: 'Что нового в JS за 2022 год?',
@@ -81,12 +82,33 @@ export const article: Article = {
         },
     ],
 };
+const articlesRecommendationsMock = new Array(4).fill(0).map((item, index) => ({
+    ...article,
+    id: String(index),
+}));
 
 export default {
     title: 'pages/ArticleDetailsPage/ArticleDetailsPage',
     component: ArticleDetailsPage,
     argTypes: {
         backgroundColor: { control: 'color' },
+    },
+    decorators: [withMock],
+    parameters: {
+        mockData: [
+            {
+                url: `${__API__}/article-ratings?articleId=&userId=1`,
+                method: 'GET',
+                status: 200,
+                response: [{ rate: 4 }],
+            },
+            {
+                url: `${__API__}/articles?_limit=3`,
+                method: 'GET',
+                status: 200,
+                response: articlesRecommendationsMock,
+            },
+        ],
     },
 } as ComponentMeta<typeof ArticleDetailsPage>;
 
@@ -98,6 +120,7 @@ Light.decorators = [StoreDecorator({
     articleDetails: {
         data: article,
     },
+    user: { authData: { id: '1' } },
 })];
 
 export const Dark = Template.bind({});
@@ -106,4 +129,5 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
     articleDetails: {
         data: article,
     },
+    user: { authData: { id: '1' } },
 })];

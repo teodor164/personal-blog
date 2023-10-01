@@ -27,11 +27,7 @@ Light.args = {
 
 export const Dark = Template.bind({});
 Dark.args = {
-    comment: {
-        id: '1',
-        text: 'hello',
-        user: { id: '1', username: 'Maxim' },
-    },
+    comment,
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
 
