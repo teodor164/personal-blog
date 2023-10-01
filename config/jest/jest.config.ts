@@ -48,6 +48,7 @@ export default {
     moduleNameMapper: {
         '\\.(css|less|scss|sss|styl)$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+        '^@/(.*)$': '<rootDir>/src/$1',
     },
 
     transformIgnorePatterns: ['node_modules/(?!axios)'],
