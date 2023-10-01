@@ -2,6 +2,13 @@ import {
     MutableRefObject, useCallback, useEffect, useRef, useState,
 } from 'react';
 
+/**
+ * Reusable hook for modal components (drawer/modal)
+ * @param animationDelay
+ * @param isOpen
+ * @param onClose
+ */
+
 interface UseModalProps {
     onClose?: () => void
     isOpen?: boolean
