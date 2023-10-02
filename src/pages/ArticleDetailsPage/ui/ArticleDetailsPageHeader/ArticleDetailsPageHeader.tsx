@@ -7,7 +7,7 @@ import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { getArticleDetailsData } from '@/entities/Article';
 import { HStack } from '@/shared/ui/Stack';
 import { getIsArticleEditable } from '../../model/selectors/getIsArticleEditable/getIsArticleEditable';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleDetails, getRouteArticles } from '@/shared/const/router';
 
 interface ArticleDetailsPageHeaderProps {
     className?: string;
@@ -22,11 +22,13 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
     const article = useSelector(getArticleDetailsData);
 
     const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
+        navigate(getRouteArticles());
     }, [navigate]);
 
     const onEdit = useCallback(() => {
-        navigate(`${RoutePath.article_details}${article?.id}/edit`);
+        if (article?.id) {
+            navigate(getRouteArticleDetails(article.id));
+        }
     }, [article?.id, navigate]);
 
     return (

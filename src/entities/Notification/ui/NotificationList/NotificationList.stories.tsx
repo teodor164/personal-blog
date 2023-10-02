@@ -46,7 +46,6 @@ export default {
                 method: 'GET',
                 status: 200,
                 response: items,
-                delay: 500,
             },
         ],
     },
