@@ -7,7 +7,7 @@ import { ArticleSortSelector } from './ArticleSortSelector';
 import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'entities/Article/ArticleSortSelector',
+    title: 'features/ArticleSortSelector',
     component: ArticleSortSelector,
     argTypes: {
         backgroundColor: { control: 'color' },
