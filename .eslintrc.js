@@ -79,6 +79,7 @@ module.exports = {
             },
         ],
         'linebreak-style': 'off',
+        'react/destructuring-assignment': 'off',
     },
     globals: {
         __IS_DEV__: true,
