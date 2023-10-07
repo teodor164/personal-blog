@@ -12,7 +12,7 @@ import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import { pageActions } from '../model/slice/pageSlice';
 import { getScrollByPath } from '../model/selectors/pageSelectors';
 import cls from './Page.module.scss';
-import { TestProps } from '@/shared/types/test';
+import { TestProps } from '@/shared/types/testTypes';
 
 interface PageProps extends TestProps {
     className?: string
