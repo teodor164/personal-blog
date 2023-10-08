@@ -695,6 +695,18 @@
       "userId": "1",
       "text": "123",
       "id": "KmtWJR_"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "comment 1234",
+      "id": "dQ1pAxg"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "1234 commrnt ",
+      "id": "qdwcDS7"
     }
   ],
   "users": [
@@ -756,6 +768,17 @@
       "country": "Ukraine",
       "city": "Moscow",
       "username": "ulbi tv",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    },
+    {
+      "id": "4",
+      "first": "test",
+      "lastname": "user",
+      "age": 465,
+      "currency": "EUR",
+      "country": "Ukraine",
+      "city": "Moscow",
+      "username": "testuser",
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
