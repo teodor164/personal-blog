@@ -13,6 +13,11 @@ export default defineConfig({
             include: '**/*.svg',
         }),
     ],
+    server: {
+        port: 3000,
+        open: true,
+        host: 'localhost',
+    },
     resolve: {
         alias: [
             { find: '@', replacement: '/src' },
