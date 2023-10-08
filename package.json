@@ -30,15 +30,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/teodor164/ulbi-production.git"
+    "url": "git+https://github.com/teodor164/personal-project.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/teodor164/ulbi-production/issues"
+    "url": "https://github.com/teodor164/personal-project/issues"
   },
-  "homepage": "https://github.com/teodor164/ulbi-production#readme",
+  "homepage": "https://github.com/teodor164/personal-project#readme",
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@babel/plugin-transform-runtime": "^7.21.0",
