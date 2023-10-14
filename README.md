@@ -166,6 +166,24 @@ For asynchronous connection of reducers (so as not to pull them into a common bu
 
 ----
 
+### Working with feature-flags
+
+Allow the use of feature flags only using the toggleFeatures helper
+
+an object with options is passed into it
+
+{
+name: name of the feature flag,
+on: function that will work after the feature is enabled
+of: function that will work after turning off the feature
+}
+
+To automatically remove a feature, use the remove-feature.ts script,
+which takes 2 arguments
+1. Name of the feature flag to be removed
+2. State (on\off)
+
+----
 
 ## Entities
 
@@ -181,15 +199,12 @@ For asynchronous connection of reducers (so as not to pull them into a common bu
 
 ## Features
 
-- [addCommentForm](/src/features/addCommentForm)
-- [articleEditForm](/src/features/articleEditForm)
-- [articleRating](/src/features/articleRating)
-- [articleRecommendationsList](/src/features/articleRecommendationsList)
+- [AddCommentForm](/src/features/AddCommentForm)
+- [ArticleRating](/src/features/ArticleRating)
+- [ArticleRecommendationsList](/src/features/ArticleRecommendationsList)
 - [AuthByUsername](/src/features/AuthByUsername)
-- [avatarDropdown](/src/features/avatarDropdown)
-- [editableProfileCard](/src/features/editableProfileCard)
+- [AvatarDropdown](/src/features/AvatarDropdown)
+- [EditableProfileCard](/src/features/EditableProfileCard)
 - [LangSwitcher](/src/features/LangSwitcher)
-- [notificationButton](/src/features/notificationButton)
-- [profileRating](/src/features/profileRating)
+- [NotificationButton](/src/features/NotificationButton)
 - [ThemeSwitcher](/src/features/ThemeSwitcher)
-- [UI](/src/features/UI)

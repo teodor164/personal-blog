@@ -3,9 +3,7 @@ import React, {
 } from 'react';
 import { ThemeContext } from '@/shared/lib/context/ThemeContext';
 import { Theme } from '@/shared/const/theme';
-import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localStorarge';
-
-const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.LIGHT;
+import { useJsonSettings } from '@/entities/User';
 
 interface ThemeProviderProps {
     initialTheme?: Theme;
@@ -18,7 +16,13 @@ const ThemeProvider: FC<ThemeProviderProps> = (props) => {
         initialTheme,
     } = props;
 
+    const { theme: defaultTheme = Theme.LIGHT } = useJsonSettings();
+
     const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
+
+    useEffect(() => {
+        setTheme(defaultTheme);
+    }, [defaultTheme]);
 
     const defaultProps = useMemo(() => ({
         theme,

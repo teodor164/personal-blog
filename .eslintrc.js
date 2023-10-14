@@ -81,6 +81,7 @@ module.exports = {
         ],
         'linebreak-style': 'off',
         'react/destructuring-assignment': 'off',
+        'react/no-unstable-nested-components': 'warn', // TODO: remove
     },
     globals: {
         __IS_DEV__: true,
