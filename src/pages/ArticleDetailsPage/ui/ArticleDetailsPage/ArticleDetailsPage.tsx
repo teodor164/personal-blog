@@ -1,5 +1,6 @@
 import { FC, memo } from 'react';
 import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleDetails } from '@/entities/Article';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
@@ -11,7 +12,8 @@ import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDet
 import { articleDetailsPageReducer } from '../../model/slice';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleRating } from '@/features/ArticleRating';
-import { toggleFeatures } from '@/shared/lib/features';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Card } from '@/shared/ui/Card';
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -25,11 +27,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const { id } = useParams<{ id: string }>();
     const { className } = props;
 
-    const articleRating = toggleFeatures({
-        name: 'isArticleRatingEnabled',
-        on: () => <ArticleRating articleId={id} />,
-        off: () => null,
-    });
+    const { t } = useTranslation();
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
@@ -37,7 +35,11 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                 <VStack max gap="16">
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
-                    {articleRating}
+                    <ToggleFeatures
+                        feature="isArticleRatingEnabled"
+                        on={<ArticleRating articleId={id} />}
+                        off={<Card>{t('Rating article feature will come soon')}</Card>}
+                    />
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
                 </VStack>
