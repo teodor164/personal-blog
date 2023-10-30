@@ -10,6 +10,7 @@ import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import cls from './Navbar.module.scss';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface NavbarProps {
     className?: string;
@@ -31,17 +32,30 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
     if (authData) {
         return (
-            <header className={classNames(cls.navbar, {}, [className])}>
-                <Text
-                    theme={TextTheme.INVERTED}
-                    title={t('Ulbi TV App')}
-                    className={cls.appName}
-                />
-                <HStack align="center" gap="32" className={cls.actions}>
-                    <NotificationButton />
-                    <AvatarDropdown />
-                </HStack>
-            </header>
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={(
+                    <header className={classNames(cls.navbarRedesigned, {}, [className])}>
+                        <HStack align="center" gap="32" className={cls.actions}>
+                            <NotificationButton />
+                            <AvatarDropdown />
+                        </HStack>
+                    </header>
+                )}
+                off={(
+                    <header className={classNames(cls.navbar, {}, [className])}>
+                        <Text
+                            theme={TextTheme.INVERTED}
+                            title={t('Ulbi TV App')}
+                            className={cls.appName}
+                        />
+                        <HStack align="center" gap="32" className={cls.actions}>
+                            <NotificationButton />
+                            <AvatarDropdown />
+                        </HStack>
+                    </header>
+                )}
+            />
         );
     }
 

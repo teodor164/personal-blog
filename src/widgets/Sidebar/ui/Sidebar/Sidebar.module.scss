@@ -6,6 +6,13 @@
     position: relative;
 }
 
+.SidebarRedesigned {
+    background: var(--light-bg-redesigned);
+    width: 220px;
+    height: 100%;
+    border-radius: 32px;
+}
+
 .switchers {
     height: calc((100vh - var(--navbar-height)) / 6);
     position: absolute;
@@ -32,4 +39,8 @@
 
 .collapsed {
     width: var(--sidebar-width-collapsed);
+}
+
+.appLogo {
+    padding-top: 20px;
 }

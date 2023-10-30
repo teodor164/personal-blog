@@ -12,6 +12,7 @@ import cls from './AvatarDropdown.module.scss';
 import {
     getRouteAdminPanel, getRouteArticleCreate, getRouteProfile,
 } from '@/shared/const/router';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface AvatarDropdownProps {
     className?: string;
@@ -39,7 +40,15 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
     return (
         <div>
             <Dropdown
-                className={classNames(cls.AvatarDropdown, {}, [className])}
+                className={classNames(
+                    toggleFeatures({
+                        name: 'isAppRedesigned',
+                        on: () => cls.AvatarDropdownRedesigned,
+                        off: () => cls.AvatarDropdown,
+                    }),
+                    {},
+                    [className],
+                )}
                 items={[
                     ...(isAdminPanelAvailable ? [{
                         content: t('Admin Panel'),

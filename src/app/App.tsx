@@ -7,6 +7,8 @@ import { Sidebar } from '@/widgets/Sidebar';
 import { getUserInited, initAuthData } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { PageLoader } from '@/widgets/PageLoader';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { MainLayout } from '@/shared/layouts';
 
 function App() {
     const dispatch = useAppDispatch();
@@ -21,15 +23,31 @@ function App() {
     }
 
     return (
-        <div className={classNames('app', {}, [])}>
-            <Suspense fallback="">
-                <Navbar />
-                <div className="content-page">
-                    <Sidebar />
-                    {inited && <AppRouter />}
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            off={(
+                <div className={classNames('app', {}, [])}>
+                    <Suspense fallback="">
+                        <Navbar />
+                        <div className="content-page">
+                            <Sidebar />
+                            {inited && <AppRouter />}
+                        </div>
+                    </Suspense>
                 </div>
-            </Suspense>
-        </div>
+            )}
+            on={(
+                <Suspense fallback="">
+                    <MainLayout
+                        className={classNames('app_redesigned', {}, [])}
+                        header={<Navbar />}
+                        content={<AppRouter />}
+                        sidebar={<Sidebar />}
+                        toolbar={<div>12343</div>}
+                    />
+                </Suspense>
+            )}
+        />
     );
 }
 
