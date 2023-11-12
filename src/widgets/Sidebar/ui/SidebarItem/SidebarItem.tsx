@@ -5,9 +5,10 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { getUserAuthData } from '@/entities/User';
 import { SidebarItemType } from '../../module/types/sidebar';
 import cls from './SidebarItem.module.scss';
-import { ToggleFeatures } from '@/shared/lib/features';
 import { AppLink } from '@/shared/ui/redesigned/AppLink';
 import { Icon } from '@/shared/ui/redesigned/Icon';
+
+import { ToggleFeatures } from '@/shared/lib/features';
 
 import { AppLink as AppLinkDeprecated, AppLinkTheme } from '@/shared/ui/deprecated/AppLink';
 

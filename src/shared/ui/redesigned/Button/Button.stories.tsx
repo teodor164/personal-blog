@@ -1,9 +1,11 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Button } from './Button';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'shared/Button',
+    title: 'shared/redesigned/Button',
     component: Button,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -16,6 +18,38 @@ export const Primary = Template.bind({});
 Primary.args = {
     children: 'Text',
 };
+
+export const PrimaryDark = Template.bind({});
+PrimaryDark.args = {
+    children: 'Text',
+};
+PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const PrimaryGreen = Template.bind({});
+PrimaryGreen.args = {
+    children: 'Text',
+};
+PrimaryGreen.decorators = [ThemeDecorator(Theme.GREEN)];
+
+export const Filled = Template.bind({});
+Filled.args = {
+    children: 'Text',
+    variant: 'filled',
+};
+
+export const FilledDark = Template.bind({});
+FilledDark.args = {
+    children: 'Text',
+    variant: 'filled',
+};
+FilledDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const FilledGreen = Template.bind({});
+FilledGreen.args = {
+    children: 'Text',
+    variant: 'filled',
+};
+FilledGreen.decorators = [ThemeDecorator(Theme.GREEN)];
 
 export const Clear = Template.bind({});
 Clear.args = {

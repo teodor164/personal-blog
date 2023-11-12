@@ -11,7 +11,7 @@ we describe the entity.
 
 `ArticleList` - Component with a list of articles
 
-`ArticleViewSelector` - Component that switches displaying a list of articles (tile, list)
+`ViewSelector` - Component that switches displaying a list of articles (tile, list)
 
 `ArticleSortSelector` - Component with selection of sorting list by articles
 

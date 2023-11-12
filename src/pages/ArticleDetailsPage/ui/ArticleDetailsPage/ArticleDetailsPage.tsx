@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleDetails } from '@/entities/Article';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Page } from '@/widgets/Page';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/common/Stack';
 import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';

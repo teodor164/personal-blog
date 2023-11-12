@@ -1,0 +1,17 @@
+.Tabs {
+    display: flex;
+    gap: 8px;
+}
+
+.tab {
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.selected {
+    padding: 8px 16px !important;
+}

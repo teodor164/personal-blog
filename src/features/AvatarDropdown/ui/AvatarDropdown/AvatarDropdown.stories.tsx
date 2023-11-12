@@ -5,6 +5,7 @@ import { AvatarDropdown } from './AvatarDropdown';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { UserRole } from '@/entities/User';
 
+// TODO update
 export default {
     title: 'features/AvatarDropdown',
     component: AvatarDropdown,

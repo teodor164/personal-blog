@@ -1,10 +1,15 @@
 import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Select, SelectOption } from '@/shared/ui/deprecated/Select';
 import { SortOrder } from '@/shared/types/sort';
 import cls from './ArticleSortSelector.module.scss';
 import { ArticleSortFiled } from '../model/const';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
+import { VStack } from '@/shared/ui/common/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
+
+import { Select, SelectOption } from '@/shared/ui/deprecated/Select';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface ArticleSortSelectorProps {
     className?: string;
@@ -50,19 +55,40 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
     ], [t]);
 
     return (
-        <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
-            <Select
-                label={t('Sort by')}
-                options={sortOptions}
-                value={sort}
-                onChange={onChangeSort}
-            />
-            <Select
-                label={t('Sort order')}
-                options={orderOptions}
-                value={order}
-                onChange={onChangeOrder}
-            />
-        </div>
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={(
+                <VStack className={classNames('', {}, [className])} gap="8">
+                    <Text text={`${t('Sort by')}:`} />
+                    <ListBox
+                        items={sortOptions}
+                        value={sort}
+                        onChange={onChangeSort}
+                    />
+                    <ListBox
+                        items={orderOptions}
+                        value={order}
+                        onChange={onChangeOrder}
+                    />
+                </VStack>
+            )}
+            off={(
+                <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
+                    <Select
+                        label={t('Sort by')}
+                        options={sortOptions}
+                        value={sort}
+                        onChange={onChangeSort}
+                    />
+                    <Select
+                        label={t('Sort order')}
+                        options={orderOptions}
+                        value={order}
+                        onChange={onChangeOrder}
+                    />
+                </div>
+            )}
+        />
+
     );
 });

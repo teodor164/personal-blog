@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Card } from '@/shared/ui/deprecated/Card';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { HStack, VStack } from '@/shared/ui/common/Stack';
 import { StarRating } from '@/shared/ui/deprecated/StarRating';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { Modal } from '@/shared/ui/deprecated/Modal';

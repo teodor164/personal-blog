@@ -6,6 +6,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { ArticleTypeTabs } from './ArticleTypeTabs';
 import { Theme } from '@/shared/const/theme';
 
+// TODO update
 export default {
     title: 'features/ArticleTypeTabs',
     component: ArticleTypeTabs,

@@ -5,6 +5,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { Sidebar } from './Sidebar';
 import { Theme } from '@/shared/const/theme';
 
+// TODO update
 export default {
     title: 'widgets/Sidebar',
     component: Sidebar,

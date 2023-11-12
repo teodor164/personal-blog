@@ -23,12 +23,6 @@ Primary.args = {
     variant: 'primary',
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-    children: 'text',
-    variant: 'red',
-};
-
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
     children: 'text',
@@ -36,9 +30,29 @@ PrimaryDark.args = {
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const SecondaryDark = Template.bind({});
-SecondaryDark.args = {
+export const PrimaryGreen = Template.bind({});
+PrimaryGreen.args = {
+    children: 'text',
+    variant: 'primary',
+};
+PrimaryGreen.decorators = [ThemeDecorator(Theme.GREEN)];
+
+export const Red = Template.bind({});
+Red.args = {
     children: 'text',
     variant: 'red',
 };
-SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const RedDark = Template.bind({});
+RedDark.args = {
+    children: 'text',
+    variant: 'red',
+};
+RedDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const RedGreen = Template.bind({});
+RedGreen.args = {
+    children: 'text',
+    variant: 'red',
+};
+RedGreen.decorators = [ThemeDecorator(Theme.GREEN)];

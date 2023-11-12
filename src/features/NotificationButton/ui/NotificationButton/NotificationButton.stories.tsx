@@ -8,6 +8,7 @@ import { NotificationSchema } from '@/entities/Notification';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
+// TODO update
 const items: NotificationSchema[] = [
     {
         id: '1',

@@ -6,8 +6,9 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { MainLayout } from './MainLayout';
 import { Theme } from '@/shared/const/theme';
 
+// TODO update
 export default {
-    title: 'pages/MainLayout',
+    title: 'shared/layouts/MainLayout',
     component: MainLayout,
     argTypes: {
         backgroundColor: { control: 'color' },

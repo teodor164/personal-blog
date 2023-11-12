@@ -1,0 +1,18 @@
+.ArticleViewSelector {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+    justify-content: end;
+
+    .notSelected {
+        fill: var(--secondary-color);
+    }
+}
+
+.ViewSelectorRedesigned {
+    .notSelected {
+        color: var(--light-bg-redesigned);
+    }
+}
+
