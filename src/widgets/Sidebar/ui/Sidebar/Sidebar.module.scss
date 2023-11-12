@@ -4,6 +4,43 @@
     background: var(--inverted-bg-color);
     transition: width 0.3s linear;
     position: relative;
+
+    .switchers {
+        height: calc((100vh - var(--navbar-height)) / 6);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+
+    .collapseBtn {
+        position: absolute;
+        right: -2rem;
+        bottom: 2rem;
+        z-index: 10;
+    }
+
+    .items {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1.25rem;
+    }
+
+    &.collapsed {
+        width: var(--sidebar-width-collapsed);
+
+        .switchers {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .lang {
+            margin-left: 0;
+        }
+    }
 }
 
 .SidebarRedesigned {
@@ -11,36 +48,62 @@
     width: 220px;
     height: 100%;
     border-radius: 32px;
+    position: relative;
+    transition: all .3s ease-in-out;
+
+    .appLogo {
+        padding-top: 20px;
+    }
+
+    .items {
+        margin-top: 55px;
+    }
+
+    .collapseBtn {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        z-index: 10;
+        transition: all .3s ease-in-out;
+        transform: rotate(90deg);
+    }
+
+    .switchers {
+        position: absolute;
+        bottom: 40px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 16px;
+    }
+
+    &.collapsedRedesigned {
+        width: 50px;
+
+        .switchers {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .items {
+            display: flex;
+            align-items: center;
+        }
+
+        .lang {
+            margin-left: 0;
+        }
+
+        .collapseBtn {
+            transform: rotate(-90deg);
+        }
+
+        .switchers {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
 }
 
-.switchers {
-    height: calc((100vh - var(--navbar-height)) / 6);
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-}
 
-.collapseBtn {
-    position: absolute;
-    right: -2rem;
-    bottom: 2rem;
-    z-index: 10;
-}
 
-.items {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1.25rem;
-}
-
-.collapsed {
-    width: var(--sidebar-width-collapsed);
-}
-
-.appLogo {
-    padding-top: 20px;
-}

@@ -8,9 +8,11 @@ import { getUserInited, initAuthData } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { PageLoader } from '@/widgets/PageLoader';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { MainLayout } from '@/shared/layouts';
+import { MainLayout } from '@/shared/layouts/MainLayout';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 function App() {
+    const { theme } = useTheme();
     const dispatch = useAppDispatch();
     const inited = useSelector(getUserInited);
 
@@ -26,7 +28,7 @@ function App() {
         <ToggleFeatures
             feature="isAppRedesigned"
             off={(
-                <div className={classNames('app', {}, [])}>
+                <div className={classNames('app', {}, [theme])}>
                     <Suspense fallback="">
                         <Navbar />
                         <div className="content-page">
@@ -37,15 +39,16 @@ function App() {
                 </div>
             )}
             on={(
-                <Suspense fallback="">
-                    <MainLayout
-                        className={classNames('app_redesigned', {}, [])}
-                        header={<Navbar />}
-                        content={<AppRouter />}
-                        sidebar={<Sidebar />}
-                        toolbar={<div>12343</div>}
-                    />
-                </Suspense>
+                <div className={classNames('app_redesigned', {}, [theme])}>
+                    <Suspense fallback="">
+                        <MainLayout
+                            header={<Navbar />}
+                            content={<AppRouter />}
+                            sidebar={<Sidebar />}
+                            toolbar={<div>12343</div>}
+                        />
+                    </Suspense>
+                </div>
             )}
         />
     );
