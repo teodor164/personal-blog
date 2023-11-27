@@ -4,10 +4,9 @@ import { useSelector } from 'react-redux';
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { ProfileCard } from '@/entities/Profile';
+import { ProfileCardRedesigned, ProfileCardDeprecated } from '@/entities/Profile';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { VStack } from '@/shared/ui/common/Stack';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
@@ -19,6 +18,9 @@ import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileF
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
+
+import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface EditableProfileCardProps {
     className?: string;
@@ -101,19 +103,40 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                         data-testid="EditableProfileCard.Error"
                     />
                 ))}
-                <ProfileCard
-                    data={formData}
-                    isLoading={isLoading}
-                    error={error}
-                    readonly={readonly}
-                    onChangeFirstname={onChangeFirstname}
-                    onChangeLastname={onChangeLastname}
-                    onChangeAge={onChangeAge}
-                    onChangeCity={onChangeCity}
-                    onChangeAvatar={onChangeAvatar}
-                    onChangeUsername={onChangeUsername}
-                    onChangeCurrency={onChangeCurrency}
-                    onChangeCountry={onChangeCountry}
+                <ToggleFeatures
+                    feature="isAppRedesigned"
+                    on={(
+                        <ProfileCardRedesigned
+                            data={formData}
+                            isLoading={isLoading}
+                            error={error}
+                            readonly={readonly}
+                            onChangeFirstname={onChangeFirstname}
+                            onChangeLastname={onChangeLastname}
+                            onChangeAge={onChangeAge}
+                            onChangeCity={onChangeCity}
+                            onChangeAvatar={onChangeAvatar}
+                            onChangeUsername={onChangeUsername}
+                            onChangeCurrency={onChangeCurrency}
+                            onChangeCountry={onChangeCountry}
+                        />
+                    )}
+                    off={(
+                        <ProfileCardDeprecated
+                            data={formData}
+                            isLoading={isLoading}
+                            error={error}
+                            readonly={readonly}
+                            onChangeFirstname={onChangeFirstname}
+                            onChangeLastname={onChangeLastname}
+                            onChangeAge={onChangeAge}
+                            onChangeCity={onChangeCity}
+                            onChangeAvatar={onChangeAvatar}
+                            onChangeUsername={onChangeUsername}
+                            onChangeCurrency={onChangeCurrency}
+                            onChangeCountry={onChangeCountry}
+                        />
+                    )}
                 />
             </VStack>
         </DynamicModuleLoader>

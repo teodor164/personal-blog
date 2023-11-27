@@ -2,7 +2,7 @@ import { Fragment, ReactNode } from 'react';
 import { Listbox as HLisBox } from '@headlessui/react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropdownDirection } from '@/shared/types/ui';
-import { HStack } from '../../../../common/Stack';
+import { VStack } from '../../../../common/Stack';
 import { Button } from '../../../Button';
 import cls from './ListBox.module.scss';
 import popupCls from '../../styles/Popup.module.scss';
@@ -43,7 +43,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
     const selectedItem = items?.find((item) => item.value === value);
 
     return (
-        <HStack gap="4" align="center">
+        <VStack gap="4">
             {label && <span>{`${label}>`}</span>}
             <HLisBox
                 as="div"
@@ -88,6 +88,6 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
                     ))}
                 </HLisBox.Options>
             </HLisBox>
-        </HStack>
+        </VStack>
     );
 }

@@ -5,6 +5,7 @@ import cls from './Text.module.scss';
 type TextVariant = 'primary' | 'error' | 'accent'
 type TextAlign = 'right' | 'left' | 'center'
 type TextSize = 's' | 'm' | 'l'
+type WhiteSpace = 'nowrap' | 'normal' | 'pre'
 
 interface TextProps {
     className?: string
@@ -13,6 +14,7 @@ interface TextProps {
     variant?: TextVariant
     align?: TextAlign
     size?: TextSize
+    whiteSpace?: WhiteSpace
 
     'data-testid'?: string
 }
@@ -32,11 +34,12 @@ export const Text = memo((props: TextProps) => {
         size = 'm',
         variant = 'primary',
         align = 'left',
+        whiteSpace = 'normal',
         'data-testid': dataTestId = 'Text',
     } = props;
 
     const HeaderTag = mapSizeToHeaderTag[size];
-    const additionClasses = [className, cls[variant], cls[align], cls[size]];
+    const additionClasses = [className, cls[variant], cls[align], cls[size], cls[`white-space-${whiteSpace}`]];
 
     return (
         <div className={classNames(cls.Text, {}, additionClasses)}>

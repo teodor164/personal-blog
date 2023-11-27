@@ -62,6 +62,8 @@ module.exports = {
                 'feature',
                 'color',
                 'variant',
+                'whiteSpace',
+                'size',
             ],
         }],
         'max-len': [

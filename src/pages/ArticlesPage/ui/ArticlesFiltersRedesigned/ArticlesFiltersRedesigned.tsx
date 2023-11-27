@@ -41,6 +41,7 @@ export const ArticlesFiltersRedesigned = memo((props: ArticlesFiltersProps) => {
                     onChange={onChangeSearch}
                     value={search}
                     addonLeft={<Icon Svg={SearchIcon} />}
+                    size="s"
                 />
                 <ArticleTypeTabs
                     value={type}

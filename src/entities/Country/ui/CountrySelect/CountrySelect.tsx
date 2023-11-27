@@ -1,7 +1,10 @@
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ListBox } from '@/shared/ui/deprecated/Popups/ui/Listbox';
 import { Country } from '../../model/types/country';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
+
+import { ToggleFeatures } from '@/shared/lib/features';
+import { ListBox as DeprecatedListBox } from '@/shared/ui/deprecated/Popups/ui/Listbox';
 
 interface CountrySelectProps {
     value?: string
@@ -26,16 +29,23 @@ export const CountrySelect: FC<CountrySelectProps> = (props) => {
         onChange?.(value as Country);
     }, [onChange]);
 
+    const listBoxProps = {
+        className,
+        items: options,
+        value,
+        defaultValue: t('Select Country'),
+        label: t('Select Country'),
+        onChange: onChangeHandler,
+        readonly,
+        direction: 'top right' as const,
+    };
+
     return (
-        <ListBox
-            className={className}
-            items={options}
-            value={value}
-            defaultValue={t('Select Country')}
-            label={t('Select Country')}
-            onChange={onChangeHandler}
-            readonly={readonly}
-            direction="top right"
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={<ListBox {...listBoxProps} />}
+            off={<DeprecatedListBox {...listBoxProps} />}
         />
+
     );
 };

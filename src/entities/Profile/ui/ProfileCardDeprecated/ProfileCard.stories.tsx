@@ -3,18 +3,18 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import { ProfileCard } from './ProfileCard';
+import { ProfileCardDeprecated } from './ProfileCardDeprecated';
 import { Theme } from '@/shared/const/theme';
 
 export default {
     title: 'entities/ProfileCard',
-    component: ProfileCard,
+    component: ProfileCardDeprecated,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ProfileCard>;
+} as ComponentMeta<typeof ProfileCardDeprecated>;
 
-const Template: ComponentStory<typeof ProfileCard> = (args) => <ProfileCard {...args} />;
+const Template: ComponentStory<typeof ProfileCardDeprecated> = (args) => <ProfileCardDeprecated {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {

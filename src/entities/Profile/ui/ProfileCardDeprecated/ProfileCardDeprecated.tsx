@@ -26,8 +26,10 @@ interface ProfileCardProps {
     onChangeCurrency?: (value: Currency) => void
     onChangeCountry?: (value: Country) => void
 }
-
-export const ProfileCard: FC<ProfileCardProps> = (props) => {
+/**
+ * @deprecated
+ */
+export const ProfileCardDeprecated: FC<ProfileCardProps> = (props) => {
     const {
         className,
         data,
@@ -92,54 +94,54 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                 placeholder={t('First name')}
                 onChange={onChangeFirstname}
                 readonly={readonly}
-                data-testid="ProfileCard.firstname"
+                data-testid="DeprecatedProfileCard.firstname"
             />
             <Input
                 value={data?.lastname}
                 placeholder={t('Last name')}
                 onChange={onChangeLastname}
                 readonly={readonly}
-                data-testid="ProfileCard.lastname"
+                data-testid="DeprecatedProfileCard.lastname"
             />
             <Input
                 value={data?.username}
                 placeholder={t('Username')}
                 onChange={onChangeUsername}
                 readonly={readonly}
-                data-testid="ProfileCard.username"
+                data-testid="DeprecatedProfileCard.username"
             />
             <Input
                 value={data?.avatar}
                 placeholder={t('Avatar link')}
                 onChange={onChangeAvatar}
                 readonly={readonly}
-                data-testid="ProfileCard.avatar"
+                data-testid="DeprecatedProfileCard.avatar"
             />
             <Input
                 value={data?.age}
                 placeholder={t('Age')}
                 onChange={onChangeAge}
                 readonly={readonly}
-                data-testid="ProfileCard.age"
+                data-testid="DeprecatedProfileCard.age"
             />
             <Input
                 value={data?.city}
                 placeholder={t('City')}
                 onChange={onChangeCity}
                 readonly={readonly}
-                data-testid="ProfileCard.city"
+                data-testid="DeprecatedProfileCard.city"
             />
             <CurrencySelect
                 value={data?.currency}
                 onChange={onChangeCurrency}
                 readonly={readonly}
-                data-testid="ProfileCard.currency"
+                data-testid="DeprecatedProfileCard.currency"
             />
             <CountrySelect
                 value={data?.country}
                 onChange={onChangeCountry}
                 readonly={readonly}
-                data-testid="ProfileCard.country"
+                data-testid="DeprecatedProfileCard.country"
             />
         </VStack>
     );
