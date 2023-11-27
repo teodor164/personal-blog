@@ -6,7 +6,7 @@ import cls from './Avatar.module.scss';
 import { AppImage } from '../../common/AppImage';
 import UserIcon from '../../../assets/icons/avarat-icon.svg';
 import { Icon } from '../Icon';
-import { Skeleton } from '../../deprecated/Skeleton';
+import { Skeleton } from '../Skeleton';
 
 interface AvatarProps {
     src?: string

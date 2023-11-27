@@ -7,6 +7,8 @@ import { Button } from '../../../Button';
 import cls from './ListBox.module.scss';
 import popupCls from '../../styles/Popup.module.scss';
 import { mapDirectionClass } from '../../styles/const';
+import { Icon } from '../../../Icon';
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 
 interface ListBoxItem<T extends string> {
     value: T;
@@ -25,7 +27,7 @@ interface ListBoxProps<T extends string> {
     label?: string
 }
 
-// TODO add focus for button and hover for options
+// TODO add focus for button and hover for options, remove button inside button
 export function ListBox<T extends string>(props: ListBoxProps<T>) {
     const {
         items,
@@ -52,9 +54,8 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
             >
                 <HLisBox.Button
                     className={popupCls.trigger}
-
                 >
-                    <Button variant="filled">
+                    <Button variant="filled" disabled={readonly} addonRight={<Icon Svg={ArrowIcon} />}>
                         {selectedItem?.content ?? defaultValue}
                     </Button>
                 </HLisBox.Button>

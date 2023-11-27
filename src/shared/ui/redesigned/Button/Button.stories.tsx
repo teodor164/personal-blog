@@ -3,6 +3,8 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Button } from './Button';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
+import { Icon } from '../Icon';
 
 export default {
     title: 'shared/redesigned/Button',
@@ -81,4 +83,10 @@ export const Disabled = Template.bind({});
 Disabled.args = {
     children: 'disabled',
     disabled: true,
+};
+
+export const WithAddon = Template.bind({});
+WithAddon.args = {
+    children: 'Button',
+    addonRight: <Icon Svg={ArrowIcon} />,
 };

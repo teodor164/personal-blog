@@ -4,10 +4,12 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticlesFilters.module.scss';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
-import { Input } from '@/shared/ui/deprecated/Input';
+import { Input } from '@/shared/ui/redesigned/Input';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
 import { VStack } from '@/shared/ui/common/Stack';
 import { useArticlesFilters } from '../../lib/hooks/useArticlesFilters';
+import { Icon } from '@/shared/ui/redesigned/Icon';
+import SearchIcon from '@/shared/assets/icons/search.svg';
 
 interface ArticlesFiltersProps {
     className?: string;
@@ -33,11 +35,12 @@ export const ArticlesFiltersRedesigned = memo((props: ArticlesFiltersProps) => {
 
     return (
         <Card padding="24" className={classNames(cls.ArticlesFilters, {}, [className])}>
-            <VStack gap="32">
+            <VStack gap="16">
                 <Input
                     placeholder={t('Search')}
                     onChange={onChangeSearch}
                     value={search}
+                    addonLeft={<Icon Svg={SearchIcon} />}
                 />
                 <ArticleTypeTabs
                     value={type}
