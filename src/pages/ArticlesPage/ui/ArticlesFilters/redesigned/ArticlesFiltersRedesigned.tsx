@@ -7,7 +7,7 @@ import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { Input } from '@/shared/ui/redesigned/Input';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
 import { VStack } from '@/shared/ui/common/Stack';
-import { useArticlesFilters } from '../../lib/hooks/useArticlesFilters';
+import { useArticlesFilters } from '../../../lib/hooks/useArticlesFilters';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 import SearchIcon from '@/shared/assets/icons/search.svg';
 

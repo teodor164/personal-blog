@@ -13,10 +13,10 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
-import { ArticlesFiltersRedesigned } from '../ArticlesFiltersRedesigned/ArticlesFiltersRedesigned';
+import { ArticlesFiltersRedesigned } from '../ArticlesFilters/redesigned/ArticlesFiltersRedesigned';
 
 import { ToggleFeatures } from '@/shared/lib/features';
-import { ArticlePageFiltersDeprecated } from '../ArticlesFiltersDeprecated/ArticlePageFiltersDeprecated';
+import { ArticlePageFiltersDeprecated } from '../ArticlesFilters/deprecated/ArticlePageFiltersDeprecated';
 
 interface ArticlesPageProps {
     className?: string;

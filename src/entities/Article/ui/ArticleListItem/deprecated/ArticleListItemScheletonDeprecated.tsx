@@ -1,16 +1,18 @@
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { ArticleView } from '../../../model/types/article';
+import cls from './ArticleListItem.module.scss';
 import { Card } from '@/shared/ui/deprecated/Card/Card';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
-import cls from './ArticleListItem.module.scss';
-import { ArticleView } from '../../model/types/article';
 
 interface ArticleListItemSkeletonProps {
     className?: string
     view: ArticleView
 }
-
-export const ArticleListItemSkeleton = memo((props: ArticleListItemSkeletonProps) => {
+/**
+ * @deprecated
+ */
+export const ArticleListItemSkeletonDeprecated = memo((props: ArticleListItemSkeletonProps) => {
     const { className, view } = props;
 
     if (view === ArticleView.BIG) {
@@ -42,3 +44,13 @@ export const ArticleListItemSkeleton = memo((props: ArticleListItemSkeletonProps
         </div>
     );
 });
+
+export const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
+    .fill(0)
+    .map((item, index) => (
+        <ArticleListItemSkeletonDeprecated
+            key={index}
+            className={cls.card}
+            view={view}
+        />
+    ));

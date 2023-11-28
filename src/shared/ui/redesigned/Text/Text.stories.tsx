@@ -134,3 +134,10 @@ SizeS.args = {
     text: 'Description Description Description Description Description',
     size: 's',
 };
+
+export const TextBold = Template.bind({});
+TextBold.args = {
+    title: 'Tile lorem',
+    text: 'Description Description Description Description Description',
+    bold: true,
+};

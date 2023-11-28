@@ -7,6 +7,7 @@ import { Currency } from '@/entities/Currency';
 import ProfilePage from './ProfilePage';
 import { Theme } from '@/shared/const/theme';
 
+// TODO update
 export default {
     title: 'pages/ProfilePage',
     component: ProfilePage,

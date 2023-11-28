@@ -64,6 +64,7 @@ module.exports = {
                 'variant',
                 'whiteSpace',
                 'size',
+                'wrap',
             ],
         }],
         'max-len': [

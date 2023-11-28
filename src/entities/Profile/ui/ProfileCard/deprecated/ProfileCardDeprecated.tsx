@@ -5,27 +5,12 @@ import { Text, TextAlign, TextTheme } from '@/shared/ui/deprecated/Text';
 import { Input } from '@/shared/ui/deprecated/Input';
 import { Loader } from '@/shared/ui/deprecated/Loader';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
-import { Currency, CurrencySelect } from '@/entities/Currency';
-import { CountrySelect, Country } from '@/entities/Country';
+import { CurrencySelect } from '@/entities/Currency';
+import { CountrySelect } from '@/entities/Country';
 import { HStack, VStack } from '@/shared/ui/common/Stack';
-import { Profile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
+import { ProfileCardProps } from '../ProfileCardContainer';
 
-interface ProfileCardProps {
-    className?: string
-    data?: Profile
-    isLoading?: boolean
-    error?: string
-    readonly?: boolean
-    onChangeFirstname?: (value: string) => void
-    onChangeLastname?: (value: string) => void
-    onChangeCity?: (value: string) => void
-    onChangeAge?: (value: string) => void
-    onChangeAvatar?: (value: string) => void
-    onChangeUsername?: (value: string) => void
-    onChangeCurrency?: (value: Currency) => void
-    onChangeCountry?: (value: Country) => void
-}
 /**
  * @deprecated
  */

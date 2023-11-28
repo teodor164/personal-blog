@@ -1,8 +1,9 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { ArticleListItem } from './ArticleListItem';
-import { Article, ArticleView } from '../../model/types/article';
+// TODO update
+import { ArticleListItemRedesigned } from './ArticleListItemRedesigned';
+import { Article, ArticleView } from '../../../model/types/article';
 
 const articleMock = {
     id: '1',
@@ -85,13 +86,13 @@ const articleMock = {
 
 export default {
     title: 'entities/Article/ArticleListItem',
-    component: ArticleListItem,
+    component: ArticleListItemRedesigned,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArticleListItem>;
+} as ComponentMeta<typeof ArticleListItemRedesigned>;
 
-const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />;
+const Template: ComponentStory<typeof ArticleListItemRedesigned> = (args) => <ArticleListItemRedesigned {...args} />;
 
 export const Big = Template.bind({});
 Big.args = {

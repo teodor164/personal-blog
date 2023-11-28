@@ -15,6 +15,7 @@ interface TextProps {
     align?: TextAlign
     size?: TextSize
     whiteSpace?: WhiteSpace
+    bold?: boolean
 
     'data-testid'?: string
 }
@@ -35,6 +36,7 @@ export const Text = memo((props: TextProps) => {
         variant = 'primary',
         align = 'left',
         whiteSpace = 'normal',
+        bold,
         'data-testid': dataTestId = 'Text',
     } = props;
 
@@ -42,7 +44,7 @@ export const Text = memo((props: TextProps) => {
     const additionClasses = [className, cls[variant], cls[align], cls[size], cls[`white-space-${whiteSpace}`]];
 
     return (
-        <div className={classNames(cls.Text, {}, additionClasses)}>
+        <div className={classNames(cls.Text, { [cls.bold]: bold }, additionClasses)}>
             {title && (
                 <HeaderTag
                     className={cls.title}

@@ -1,4 +1,4 @@
-import { HTMLAttributeAnchorTarget, memo } from 'react';
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text } from '@/shared/ui/deprecated/Text';
@@ -8,23 +8,18 @@ import { Card } from '@/shared/ui/deprecated/Card/Card';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { AppLink } from '@/shared/ui/deprecated/AppLink';
-import {
-    Article, ArticleBlockType, ArticleTextBlock, ArticleView,
-} from '../../model/types/article';
+import { ArticleBlockType, ArticleTextBlock, ArticleView } from '../../../model/types/article';
 import cls from './ArticleListItem.module.scss';
-import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { ArticleTextBlockComponent } from '../../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { AppImage } from '@/shared/ui/common/AppImage';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { ArticleListItemProps } from '../ArticleListItemContainer';
 
-interface ArticleListItemProps {
-    className?: string;
-    article: Article;
-    view: ArticleView;
-    target?: HTMLAttributeAnchorTarget
-}
-
-export const ArticleListItem = memo((props: ArticleListItemProps) => {
+/**
+ * @deprecated
+ */
+export const ArticleListItemDeprecated = memo((props: ArticleListItemProps) => {
     const { t } = useTranslation();
     const {
         className,

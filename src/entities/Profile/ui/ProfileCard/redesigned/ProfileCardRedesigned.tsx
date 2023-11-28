@@ -1,32 +1,16 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
-import { Currency, CurrencySelect } from '@/entities/Currency';
-import { CountrySelect, Country } from '@/entities/Country';
+import { CurrencySelect } from '@/entities/Currency';
+import { CountrySelect } from '@/entities/Country';
 import { HStack, VStack } from '@/shared/ui/common/Stack';
-import { Profile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
 import { Input } from '@/shared/ui/redesigned/Input';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
-
-interface ProfileCardProps {
-    className?: string
-    data?: Profile
-    isLoading?: boolean
-    error?: string
-    readonly?: boolean
-    onChangeFirstname?: (value: string) => void
-    onChangeLastname?: (value: string) => void
-    onChangeCity?: (value: string) => void
-    onChangeAge?: (value: string) => void
-    onChangeAvatar?: (value: string) => void
-    onChangeUsername?: (value: string) => void
-    onChangeCurrency?: (value: Currency) => void
-    onChangeCountry?: (value: Country) => void
-}
+import { ProfileCardProps } from '../ProfileCardContainer';
 
 export const ProfileCardRedesigned: FC<ProfileCardProps> = (props) => {
     const {

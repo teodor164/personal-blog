@@ -7,7 +7,9 @@ interface ArticleTextBlockComponentProps {
     className?: string
     block?: ArticleTextBlock
 }
-
+/**
+ * @deprecated
+ */
 export const ArticleTextBlockComponent = memo((props: ArticleTextBlockComponentProps) => {
     const { className, block } = props;
 

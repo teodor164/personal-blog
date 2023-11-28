@@ -1,9 +1,8 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-// TODO update
-import { Article, ArticleView } from '../../model/types/article';
-import { ArticleList } from './ArticleList';
+import { ArticleListItemDeprecated } from './ArticleListItemDeprecated';
+import { Article, ArticleView } from '../../../model/types/article';
 
 const articleMock = {
     id: '1',
@@ -83,43 +82,25 @@ const articleMock = {
         },
     ],
 } as Article;
-const articlesMock = new Array(16).fill(0).map((item, index) => ({
-    ...articleMock,
-    id: String(index),
-}));
 
 export default {
-    title: 'entities/Article/ArticleList',
-    component: ArticleList,
+    title: 'entities/Article/ArticleListItem',
+    component: ArticleListItemDeprecated,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArticleList>;
+} as ComponentMeta<typeof ArticleListItemDeprecated>;
 
-const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
+const Template: ComponentStory<typeof ArticleListItemDeprecated> = (args) => <ArticleListItemDeprecated {...args} />;
 
-export const isLoadingBig = Template.bind({});
-isLoadingBig.args = {
+export const Big = Template.bind({});
+Big.args = {
     view: ArticleView.BIG,
-    isLoading: true,
-    articles: [],
-};
-
-export const isLoadingSmall = Template.bind({});
-isLoadingSmall.args = {
-    view: ArticleView.SMALL,
-    isLoading: true,
-    articles: [],
+    article: articleMock,
 };
 
 export const Small = Template.bind({});
 Small.args = {
     view: ArticleView.SMALL,
-    articles: articlesMock,
-};
-
-export const Big = Template.bind({});
-Big.args = {
-    view: ArticleView.BIG,
-    articles: articlesMock,
+    article: articleMock,
 };

@@ -53,6 +53,26 @@ FilledGreen.args = {
 };
 FilledGreen.decorators = [ThemeDecorator(Theme.GREEN)];
 
+export const Outline = Template.bind({});
+Outline.args = {
+    children: 'Text',
+    variant: 'outline',
+};
+
+export const OutlineDark = Template.bind({});
+OutlineDark.args = {
+    children: 'Text',
+    variant: 'outline',
+};
+OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const OutlineGreen = Template.bind({});
+OutlineGreen.args = {
+    children: 'Text',
+    variant: 'outline',
+};
+OutlineGreen.decorators = [ThemeDecorator(Theme.GREEN)];
+
 export const Clear = Template.bind({});
 Clear.args = {
     children: 'Text',

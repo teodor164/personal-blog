@@ -7,7 +7,7 @@ import cls from './ArticlePageFiltersDeprecated.module.scss';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
 import { ViewSelector } from '@/features/ViewSelector';
-import { useArticlesFilters } from '../../lib/hooks/useArticlesFilters';
+import { useArticlesFilters } from '../../../lib/hooks/useArticlesFilters';
 
 interface ArticlePageFiltersProps {
     className?: string;
