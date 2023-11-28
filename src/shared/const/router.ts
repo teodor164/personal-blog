@@ -7,3 +7,4 @@ export const getRouteArticleDetails = (id: string) => `/articles/${id}`;
 export const getRouteArticleCreate = () => '/articles/new';
 export const getRouteArticleEdit = (id: string) => `/articles/${id}/edit`;
 export const getRouteForbidden = () => '/forbidden';
+export const getRouteSettings = () => '/settings';

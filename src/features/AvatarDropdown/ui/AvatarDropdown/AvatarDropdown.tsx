@@ -11,7 +11,7 @@ import {
 import {
     getRouteAdminPanel,
     getRouteArticleCreate,
-    getRouteProfile,
+    getRouteProfile, getRouteSettings,
 } from '@/shared/const/router';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import cls from './AvatarDropdown.module.scss';
@@ -54,6 +54,10 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
         {
             content: t('My profile'),
             href: getRouteProfile(authData.id),
+        },
+        {
+            content: t('Settings'),
+            href: getRouteSettings(),
         },
         {
             content: t('Create new article'),
