@@ -5,7 +5,7 @@ import { Loader } from './Loader';
 import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'shared/Loader',
+    title: 'shared/deprecated/Loader',
     component: Loader,
     argTypes: {
         backgroundColor: { control: 'color' },

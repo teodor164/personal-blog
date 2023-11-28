@@ -6,7 +6,7 @@ import { Skeleton } from './Skeleton';
 import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'shared/Skeleton',
+    title: 'shared/redesigned/Skeleton',
     component: Skeleton,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -14,7 +14,6 @@ export default {
 } as ComponentMeta<typeof Skeleton>;
 
 const Template: ComponentStory<typeof Skeleton> = (args) => <Skeleton {...args} />;
-// TODO update
 export const Light = Template.bind({});
 Light.args = {
     width: '100%',

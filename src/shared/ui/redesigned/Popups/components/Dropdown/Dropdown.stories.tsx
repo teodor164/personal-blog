@@ -8,7 +8,7 @@ import { Dropdown } from './Dropdown';
 import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'shared/Dropdown',
+    title: 'shared/redesigned/Dropdown',
     component: Dropdown,
     argTypes: {
         backgroundColor: { control: 'color' },

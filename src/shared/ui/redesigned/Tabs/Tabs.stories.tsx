@@ -8,7 +8,7 @@ import { Tabs } from './Tabs';
 import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'shared/redesign/Tabs',
+    title: 'shared/redesigned/Tabs',
     component: Tabs,
     argTypes: {
         backgroundColor: { control: 'color' },

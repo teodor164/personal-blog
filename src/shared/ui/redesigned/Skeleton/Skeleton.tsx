@@ -8,7 +8,7 @@ interface SkeletonProps {
     width?: string | number
     border?: string
 }
-// TODO update
+
 export const Skeleton = memo((props: SkeletonProps) => {
     const {
         className,

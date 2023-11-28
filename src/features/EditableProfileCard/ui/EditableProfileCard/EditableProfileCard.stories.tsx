@@ -11,7 +11,7 @@ export default {
         backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof EditableProfileCard>;
-
+// TODO update
 const Template: ComponentStory<typeof EditableProfileCard> = (args) => <EditableProfileCard {...args} />;
 
 export const Normal = Template.bind({});

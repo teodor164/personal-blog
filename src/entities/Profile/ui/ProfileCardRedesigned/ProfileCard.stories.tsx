@@ -13,7 +13,7 @@ export default {
         backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof ProfileCardRedesigned>;
-
+// TODO update
 const Template: ComponentStory<typeof ProfileCardRedesigned> = (args) => <ProfileCardRedesigned {...args} />;
 
 export const Light = Template.bind({});

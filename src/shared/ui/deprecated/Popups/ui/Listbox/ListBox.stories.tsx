@@ -7,7 +7,7 @@ import { ListBox } from './ListBox';
 import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'shared/ListBox',
+    title: 'shared/deprecated/ListBox',
     component: ListBox,
     argTypes: {
         backgroundColor: { control: 'color' },
