@@ -895,6 +895,12 @@
       "rate": 2,
       "feedback": "asdasdasd",
       "id": "xbwnNBF"
+    },
+    {
+      "articleId": "4",
+      "userId": "1",
+      "rate": 4,
+      "id": "RPaGVB1"
     }
   ],
   "profile-ratings": [

@@ -6,6 +6,7 @@ import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
+// TODO update
 const articleMock = {
     id: '1',
     title: 'Javascript news',

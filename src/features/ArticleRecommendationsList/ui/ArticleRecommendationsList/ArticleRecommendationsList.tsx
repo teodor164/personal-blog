@@ -1,10 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text, TextSize } from '@/shared/ui/deprecated/Text';
+import { Text as DeprecatedText, TextSize } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
 import { ArticleList } from '@/entities/Article';
 import { VStack } from '@/shared/ui/common/Stack';
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface ArticleRecommendationsListProps {
     className?: string;
@@ -25,9 +27,20 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
             className={classNames('', {}, [className])}
             data-testid="article-recommendations-list"
         >
-            <Text
-                size={TextSize.L}
-                title={t('Recommendations')}
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={(
+                    <Text
+                        size="l"
+                        title={t('Recommendations')}
+                    />
+                )}
+                off={(
+                    <DeprecatedText
+                        size={TextSize.L}
+                        title={t('Recommendations')}
+                    />
+                )}
             />
             <ArticleList
                 articles={articles}

@@ -6,8 +6,9 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { StarRating } from './StarRating';
 import { Theme } from '@/shared/const/theme';
 
+// TODO update
 export default {
-    title: 'shared/deprecated/StarRating',
+    title: 'shared/redesigned/StarRating',
     component: StarRating,
     argTypes: {
         backgroundColor: { control: 'color' },

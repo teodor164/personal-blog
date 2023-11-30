@@ -6,6 +6,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { RatingCard } from './RatingCard';
 import { Theme } from '@/shared/const/theme';
 
+// TODO update
 export default {
     title: 'entities/Rating/RatingCard',
     component: RatingCard,
