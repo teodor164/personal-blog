@@ -9,7 +9,7 @@ import { useArticleRecommendationsList } from '../../api/articleRecommendationsA
 interface ArticleRecommendationsListProps {
     className?: string;
 }
-
+// TODO make responsive
 export const ArticleRecommendationsList = memo((props: ArticleRecommendationsListProps) => {
     const { className } = props;
     const { t } = useTranslation();

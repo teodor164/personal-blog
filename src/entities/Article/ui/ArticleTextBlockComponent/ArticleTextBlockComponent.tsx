@@ -1,17 +1,24 @@
 import { memo } from 'react';
-import { Text } from '@/shared/ui/deprecated/Text';
 import { ArticleTextBlock } from '../../model/types/article';
 import cls from './ArticleTextBlockComponent.module.scss';
+import { Text as RedesignedText } from '@/shared/ui/redesigned/Text';
+
+import { toggleFeatures } from '@/shared/lib/features';
+import { Text as DeprecatedText } from '@/shared/ui/deprecated/Text';
 
 interface ArticleTextBlockComponentProps {
     className?: string
     block?: ArticleTextBlock
 }
-/**
- * @deprecated
- */
+
 export const ArticleTextBlockComponent = memo((props: ArticleTextBlockComponentProps) => {
     const { className, block } = props;
+
+    const Text = toggleFeatures({
+        name: 'isAppRedesigned',
+        off: () => DeprecatedText as typeof RedesignedText,
+        on: () => RedesignedText,
+    });
 
     return (
         <div className={className}>

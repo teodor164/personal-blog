@@ -7,7 +7,7 @@ we describe the entity.
 
 - Components
 
-`ArticleDetails` - component with information about the article
+`ArticleDetailsDeprecated` - component with information about the article
 
 `ArticleList` - Component with a list of articles
 

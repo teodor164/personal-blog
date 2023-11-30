@@ -44,5 +44,9 @@
   "New": "New",
   "Old": "Old",
   "User settings": "User settings",
-  "Select app design": "Select app design"
+  "Select app design": "Select app design",
+  "{{count}} views_zero": "{{count}} views",
+  "{{count}} views_one": "{{count}} view",
+  "{{count}} views_other": "{{count}} views",
+  "No data": "No data"
 }

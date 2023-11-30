@@ -27,8 +27,8 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
 
     const userInfo = (
         <>
-            <Avatar size={32} src={article.user.avatar} />
-            <Text text={article.user.username} bold />
+            <Avatar size={32} src={article.user?.avatar} />
+            <Text text={article.user?.username} bold />
         </>
     );
     const views = (
@@ -55,7 +55,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
                     <Text title={article.title} bold />
                     <Text title={article.subtitle} size="s" />
                     <AppImage
-                        fallback={<Skeleton width="100%" height={250} />}
+                        fallback={<Skeleton width="100%" height={420} />}
                         src={article.img}
                         className={cls.img}
                         alt={article.title}
@@ -86,7 +86,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
             <Card padding="0" max className={cls.card}>
                 <div className={cls.imageContainer}>
                     <AppImage
-                        fallback={<Skeleton width={200} height={200} />}
+                        fallback={<Skeleton width="100%" height={140} />}
                         src={article.img}
                         alt={article.title}
                         className={cls.img}

@@ -3,10 +3,11 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Article, ArticleBlockType, ArticleType } from '../../model/types/article';
-import { ArticleDetails } from './ArticleDetails';
+import { Article, ArticleBlockType, ArticleType } from '../../../model/types/article';
+import { ArticleDetailsRedesigned } from './ArticleDetailsRedesigned';
 import { Theme } from '@/shared/const/theme';
 
+// TODO update
 const article: Article = {
     id: '1',
     title: 'Javascript news',
@@ -82,14 +83,14 @@ const article: Article = {
 };
 
 export default {
-    title: 'entities/Article/ArticleDetails',
-    component: ArticleDetails,
+    title: 'entities/Article/ArticleDetailsRedesigned',
+    component: ArticleDetailsRedesigned,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArticleDetails>;
+} as ComponentMeta<typeof ArticleDetailsRedesigned>;
 
-const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />;
+const Template: ComponentStory<typeof ArticleDetailsRedesigned> = (args) => <ArticleDetailsRedesigned {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};

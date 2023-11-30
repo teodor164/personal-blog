@@ -5,13 +5,13 @@ import { Modal } from './Modal';
 import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'shared/deprecated/Modal',
+    title: 'shared/redesigned/Modal',
     component: Modal,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof Modal>;
-
+// TODO update
 const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 
 export const Primary = Template.bind({});

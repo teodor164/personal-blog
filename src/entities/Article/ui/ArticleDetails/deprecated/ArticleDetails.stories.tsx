@@ -3,9 +3,8 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Article, ArticleType } from '@/entities/Article';
-import { ArticleBlockType } from '@/entities/Article/testing';
-import ArticleDetailsPage from './ArticleDetailsPage';
+import { Article, ArticleBlockType, ArticleType } from '../../../model/types/article';
+import { ArticleDetailsDeprecated } from './ArticleDetailsDeprecated';
 import { Theme } from '@/shared/const/theme';
 
 // TODO update
@@ -15,11 +14,11 @@ const article: Article = {
     subtitle: 'Что нового в JS за 2022 год?',
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
-    createdAt: '26.02.2022',
     user: {
         id: '1',
         username: 'admin',
     },
+    createdAt: '26.02.2022',
     type: [ArticleType.IT],
     blocks: [
         {
@@ -82,36 +81,16 @@ const article: Article = {
         },
     ],
 };
-const articlesRecommendationsMock = new Array(4).fill(0).map((item, index) => ({
-    ...article,
-    id: String(index),
-}));
 
 export default {
-    title: 'pages/ArticleDetailsPage/ArticleDetailsPage',
-    component: ArticleDetailsPage,
+    title: 'entities/Article/ArticleDetailsRedesigned',
+    component: ArticleDetailsDeprecated,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-    parameters: {
-        mockData: [
-            {
-                url: `${__API__}/article-ratings?articleId=&userId=1`,
-                method: 'GET',
-                status: 200,
-                response: [{ rate: 4 }],
-            },
-            {
-                url: `${__API__}/articles?_limit=3`,
-                method: 'GET',
-                status: 200,
-                response: articlesRecommendationsMock,
-            },
-        ],
-    },
-} as ComponentMeta<typeof ArticleDetailsPage>;
+} as ComponentMeta<typeof ArticleDetailsDeprecated>;
 
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args} />;
+const Template: ComponentStory<typeof ArticleDetailsDeprecated> = (args) => <ArticleDetailsDeprecated {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};
@@ -119,7 +98,6 @@ Light.decorators = [StoreDecorator({
     articleDetails: {
         data: article,
     },
-    user: { authData: { id: '1' } },
 })];
 
 export const Dark = Template.bind({});
@@ -128,5 +106,28 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
     articleDetails: {
         data: article,
     },
-    user: { authData: { id: '1' } },
+})];
+
+export const Green = Template.bind({});
+Green.args = {};
+Green.decorators = [ThemeDecorator(Theme.GREEN), StoreDecorator({
+    articleDetails: {
+        data: article,
+    },
+})];
+
+export const Loading = Template.bind({});
+Loading.args = {};
+Loading.decorators = [StoreDecorator({
+    articleDetails: {
+        isLoading: true,
+    },
+})];
+
+export const Error = Template.bind({});
+Error.args = {};
+Error.decorators = [StoreDecorator({
+    articleDetails: {
+        error: 'Some error occurred',
+    },
 })];
