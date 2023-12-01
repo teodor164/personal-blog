@@ -9,6 +9,7 @@ import { UserRole } from '@/entities/User';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import {
+    AppRoutes,
     getRouteAbout,
     getRouteAdminPanel,
     getRouteArticleCreate,
@@ -17,25 +18,11 @@ import {
     getRouteArticles,
     getRouteForbidden,
     getRouteMain,
-    getRouteProfile, getRouteSettings,
+    getRouteProfile,
+    getRouteSettings,
 } from '@/shared/const/router';
 import { AppRouteProps } from '@/shared/types/router';
 import { SettingsPage } from '@/pages/SettingsPage';
-
-enum AppRoutes {
-    MAIN = 'main',
-    ABOUT = 'about',
-    PROFILE = 'profile',
-    ARTICLES = 'articles',
-    ARTICLE_DETAILS = 'article_details',
-    ARTICLE_CREATE = 'article_create',
-    ARTICLE_EDIT = 'article_edit',
-    ADMIN_PANEL = 'admin_panel',
-    FORBIDDEN = 'forbidden',
-    SETTINGS = 'settings',
-
-    NOT_FOUND = 'not_found'
-}
 
 export const routeConfig: Record<AppRoutes, AppRouteProps> = {
     [AppRoutes.MAIN]: {
