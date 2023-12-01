@@ -78,3 +78,9 @@ BorderRound.args = {
     children: <Text title="title" text="text" />,
     border: 'round',
 };
+
+export const BorderPartial = Template.bind({});
+BorderPartial.args = {
+    children: <Text title="title" text="text" />,
+    border: 'partial',
+};

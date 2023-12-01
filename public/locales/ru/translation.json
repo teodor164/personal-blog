@@ -49,5 +49,7 @@
   "{{count}} views_one": "{{count}} просмотр",
   "{{count}} views_few": "{{count}} просмотра",
   "{{count}} views_many": "{{count}} просмотров",
-  "No data": "No data"
+  "No data": "No data",
+  "Username": "Username",
+  "Password": "Password"
 }

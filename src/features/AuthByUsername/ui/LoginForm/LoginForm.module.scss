@@ -1,13 +1,22 @@
 .LoginForm {
     display: flex;
     flex-direction: column;
+
+    .loginBtn {
+        margin-top: 1rem;
+        margin-left: auto;
+    }
+}
+
+.LoginFormRedesigned {
+    min-width: 450px;
+    .loginBtn {
+        margin-left: auto;
+    }
 }
 
 .input {
     margin-top: 0.75rem;
 }
 
-.loginBtn {
-    margin-top: 1rem;
-    margin-left: auto;
-}
+

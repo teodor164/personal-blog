@@ -58,7 +58,7 @@ export const ArticleDetailsControlSection = memo((props: ArticleDetailsControlSe
     }
 
     return (
-        <Card border="round" padding="24" className={classNames(cls.ArticleDetailsControlSection, {}, [className])}>
+        <Card border="partial" padding="24" className={classNames(cls.ArticleDetailsControlSection, {}, [className])}>
             <VStack gap="32">
                 {content}
             </VStack>

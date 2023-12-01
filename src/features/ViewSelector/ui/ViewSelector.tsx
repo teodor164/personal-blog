@@ -53,7 +53,7 @@ export const ViewSelector = memo((props: ArticleViewSelectorProps) => {
         <ToggleFeatures
             feature="isAppRedesigned"
             on={(
-                <Card border="round" className={classNames(cls.ViewSelectorRedesigned, {}, [className])}>
+                <Card border="partial" className={classNames(cls.ViewSelectorRedesigned, {}, [className])}>
                     <HStack gap="8" reverse>
                         {viewsTypes.map((viewType) => (
                             <Icon

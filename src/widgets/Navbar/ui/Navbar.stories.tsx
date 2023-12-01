@@ -5,6 +5,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { Navbar } from './Navbar';
 import { Theme } from '@/shared/const/theme';
 
+// TODO update
 export default {
     title: 'widgets/Navbar',
     component: Navbar,

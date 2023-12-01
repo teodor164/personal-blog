@@ -48,5 +48,7 @@
   "{{count}} views_zero": "{{count}} views",
   "{{count}} views_one": "{{count}} view",
   "{{count}} views_other": "{{count}} views",
-  "No data": "No data"
+  "No data": "No data",
+  "Username": "Username",
+  "Password": "Password"
 }

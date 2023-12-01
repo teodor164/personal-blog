@@ -83,7 +83,7 @@ export const ArticleDetailsRedesigned = memo((props: ArticleDetailsProps) => {
     }
 
     return (
-        <Card padding="24" border="round" max>
+        <Card padding="24" border="partial" max>
             <VStack
                 gap="16"
                 max
