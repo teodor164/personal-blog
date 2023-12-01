@@ -5,6 +5,7 @@ import { AuthRequire } from './AuthRequire';
 import { routeConfig } from '../config/routeConfig';
 import { AppRouteProps } from '@/shared/types/router';
 
+// TODO replace Loader
 const AppRouter = () => {
     const renderWithWrapper = useCallback((route: AppRouteProps) => {
         const element = (
