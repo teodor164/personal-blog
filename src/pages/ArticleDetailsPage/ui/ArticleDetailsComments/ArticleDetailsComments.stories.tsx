@@ -6,6 +6,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { ArticleDetailsComments } from './ArticleDetailsComments';
 import { Theme } from '@/shared/const/theme';
 
+// TODO update
 export default {
     title: 'pages/ArticleDetailsPage/ArticleDetailsComments',
     component: ArticleDetailsComments,

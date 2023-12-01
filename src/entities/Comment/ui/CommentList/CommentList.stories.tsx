@@ -5,6 +5,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { CommentList } from './CommentList';
 import { Theme } from '@/shared/const/theme';
 
+// TODO update
 export default {
     title: 'entities/Comment/CommentList',
     component: CommentList,

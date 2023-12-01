@@ -22,7 +22,7 @@ interface ArticleDetailsPageProps {
 const reducers: ReducersList = {
     articleDetailsPage: articleDetailsPageReducer,
 };
-
+// TODO all redesigned page should in in a card
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const { id } = useParams<{ id: string }>();
     const { className } = props;

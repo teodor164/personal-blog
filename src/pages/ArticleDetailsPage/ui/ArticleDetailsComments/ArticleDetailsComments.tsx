@@ -2,7 +2,8 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
+import { Text as TextRedesigned } from '@/shared/ui/redesigned/Text';
 import { AddCommentForm } from '@/features/AddCommentForm';
 import { CommentList } from '@/entities/Comment';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -12,6 +13,7 @@ import { addCommentForArticle } from '../../model/services/addCommentForArticle/
 import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
 import { getArticleDetailsCommentsIsLoading } from '../../model/selectors/comments/comments';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface ArticleDetailsCommentsProps {
     className?: string;
@@ -33,6 +35,12 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
+    });
+
+    const Text = toggleFeatures({
+        name: 'isAppRedesigned',
+        on: () => TextRedesigned,
+        off: () => TextDeprecated as typeof TextRedesigned,
     });
 
     return (
