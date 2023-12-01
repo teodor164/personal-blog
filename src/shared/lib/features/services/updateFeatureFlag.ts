@@ -2,38 +2,38 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { FeatureFlags } from '@/shared/types/featureFlags';
 import { updateFeatureFlagsMutation } from '../api/featureFlagsApi';
-import { getAllFeatureFlags } from '../lib/setGetFeatures';
+import { getAllFeatureFlags, setFeatureFlags } from '../lib/setGetFeatures';
 
-interface UpdateFeatureFlagsOptions {
-    newFeatures: Partial<FeatureFlags>
-    userId: string
+interface UpdateFeatureFlagOptions {
+    userId: string;
+    newFeatures: Partial<FeatureFlags>;
 }
 
 export const updateFeatureFlag = createAsyncThunk<
     void,
-    UpdateFeatureFlagsOptions,
+    UpdateFeatureFlagOptions,
     ThunkConfig<string>
-    >(
-        'user/updateFeatureFlag',
-        async ({ userId, newFeatures }, thunkApi) => {
-            const {
-                rejectWithValue, dispatch,
-            } = thunkApi;
+    >('user/saveJsonSettings', async ({ userId, newFeatures }, thunkApi) => {
+        const { rejectWithValue, dispatch } = thunkApi;
 
-            try {
-                await dispatch(updateFeatureFlagsMutation({
+        const allFeatures = {
+            ...getAllFeatureFlags(),
+            ...newFeatures,
+        };
+
+        try {
+            await dispatch(
+                updateFeatureFlagsMutation({
                     userId,
-                    features: {
-                        ...getAllFeatureFlags(),
-                        ...newFeatures,
-                    },
-                }));
+                    features: allFeatures,
+                }),
+            );
 
-                window.location.reload();
-                return undefined;
-            } catch (e) {
-                console.log(e);
-                return rejectWithValue('error');
-            }
-        },
-    );
+            setFeatureFlags(allFeatures);
+
+            return undefined;
+        } catch (e) {
+            console.log(e);
+            return rejectWithValue('');
+        }
+    });

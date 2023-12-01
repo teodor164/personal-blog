@@ -21,6 +21,7 @@ import { Input as DeprecatedInput } from '@/shared/ui/deprecated/Input';
 import { Text as DeprecatedText, TextTheme } from '@/shared/ui/deprecated/Text';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { VStack } from '@/shared/ui/common/Stack';
+import { useForceUpdate } from '@/shared/lib/render/forceUpdate';
 
 export interface LoginFormProps {
     className?: string
@@ -35,6 +36,8 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const { t } = useTranslation();
 
     const dispatch = useAppDispatch();
+
+    const forceUpdate = useForceUpdate();
 
     const username = useSelector(getLoginUsername);
     const password = useSelector(getLoginPassword);
@@ -53,8 +56,9 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
         const result = await dispatch(loginByUsername({ username, password }));
         if (result.meta.requestStatus === 'fulfilled') {
             onSuccess();
+            forceUpdate();
         }
-    }, [dispatch, onSuccess, password, username]);
+    }, [dispatch, forceUpdate, onSuccess, password, username]);
 
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>

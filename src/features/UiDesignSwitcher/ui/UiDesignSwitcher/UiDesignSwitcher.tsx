@@ -1,14 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { getFeatureFlag, updateFeatureFlag } from '@/shared/lib/features';
 import { ListBox } from '@/shared/ui/redesigned/Popups';
 import { Text } from '@/shared/ui/redesigned/Text';
+import { getFeatureFlag, updateFeatureFlag } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from '@/entities/User';
-import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { VStack } from '@/shared/ui/common/Stack';
+import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
+import { useForceUpdate } from '@/shared/lib/render/forceUpdate';
 
 interface UiDesignSwitcherProps {
     className?: string;
@@ -21,6 +21,7 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
     const dispatch = useAppDispatch();
     const authData = useSelector(getUserAuthData);
     const [isLoading, setIsLoading] = useState(false);
+    const forceUpdate = useForceUpdate();
 
     const items = [
         {
@@ -36,32 +37,32 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
     const onChange = async (value: string) => {
         if (authData) {
             setIsLoading(true);
-            await dispatch(updateFeatureFlag({
-                userId: authData.id,
-                newFeatures: {
-                    isAppRedesigned: value === 'new',
-                },
-            })).unwrap;
-            setIsLoading(true);
+            await dispatch(
+                updateFeatureFlag({
+                    userId: authData.id,
+                    newFeatures: {
+                        isAppRedesigned: value === 'new',
+                    },
+                }),
+            ).unwrap();
+            setIsLoading(false);
+            forceUpdate();
         }
     };
 
-    if (isLoading) {
-        return (
-            <VStack gap="4">
-                <Text text={t('Select app design')} />
-                <Skeleton width={300} height={40} />
-            </VStack>
-        );
-    }
-
     return (
-        <ListBox
-            className={classNames('', {}, [className])}
-            label={t('Select app design')}
-            value={isAppRedesigned ? 'new' : 'old'}
-            items={items}
-            onChange={onChange}
-        />
+        <VStack gap="8">
+            <Text text={t('Select app design')} />
+            {isLoading ? (
+                <Skeleton width={100} height={40} />
+            ) : (
+                <ListBox
+                    onChange={onChange}
+                    items={items}
+                    value={isAppRedesigned ? 'new' : 'old'}
+                    className={className}
+                />
+            )}
+        </VStack>
     );
 });
