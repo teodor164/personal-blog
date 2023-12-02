@@ -1,16 +1,15 @@
 .primary {
     color: var(--text-redesigned);
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
     &:hover {
         color: var(--accent-redesigned);
     }
 }
 
-
 .red {
     color: var(--cancel-redesigned);
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 
     &:hover {
         opacity: 0.8;

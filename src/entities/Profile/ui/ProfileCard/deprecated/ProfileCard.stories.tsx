@@ -7,7 +7,7 @@ import { ProfileCardDeprecated } from './ProfileCardDeprecated';
 import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'entities/ProfileCard',
+    title: 'entities/ProfileCard/deprecated',
     component: ProfileCardDeprecated,
     argTypes: {
         backgroundColor: { control: 'color' },

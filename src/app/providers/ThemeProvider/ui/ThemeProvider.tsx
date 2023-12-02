@@ -3,7 +3,6 @@ import React, {
 } from 'react';
 import { ThemeContext } from '@/shared/lib/context/ThemeContext';
 import { Theme } from '@/shared/const/theme';
-import { useJsonSettings } from '@/entities/User';
 import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localStorarge';
 
 interface ThemeProviderProps {
@@ -19,15 +18,13 @@ const ThemeProvider: FC<ThemeProviderProps> = (props) => {
         initialTheme,
     } = props;
 
-    const { theme: defaultTheme } = useJsonSettings();
-
-    const [theme, setTheme] = useState<Theme>(fallbackTheme || initialTheme || defaultTheme);
+    const [theme, setTheme] = useState<Theme>(fallbackTheme || initialTheme);
 
     useEffect(() => {
-        if (defaultTheme) {
-            setTheme(defaultTheme);
+        if (initialTheme) {
+            setTheme(initialTheme);
         }
-    }, [defaultTheme]);
+    }, [initialTheme]);
 
     const defaultProps = useMemo(() => ({
         theme,

@@ -1,3 +1,12 @@
+.switchers {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 16px;
+}
+
 .Sidebar {
     height: calc(100vh - var(--navbar-height));
     width: var(--sidebar-width);
@@ -49,7 +58,7 @@
     height: 100%;
     border-radius: 32px;
     position: relative;
-    transition: width .3s ease-in-out;
+    transition: width 0.3s ease-in-out;
 
     .appLogo {
         padding-top: 20px;
@@ -64,26 +73,12 @@
         right: 0;
         top: 50%;
         z-index: 10;
-        transition: all .3s ease-in-out;
+        transition: all 0.3s ease-in-out;
         transform: rotate(90deg);
-    }
-
-    .switchers {
-        position: absolute;
-        bottom: 40px;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        gap: 16px;
     }
 
     &.collapsedRedesigned {
         width: 50px;
-
-        .switchers {
-            flex-direction: column;
-            align-items: center;
-        }
 
         .items {
             display: flex;
@@ -104,6 +99,3 @@
         }
     }
 }
-
-
-

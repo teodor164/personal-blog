@@ -7,13 +7,13 @@ import { ProfileCardRedesigned } from './ProfileCardRedesigned';
 import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'entities/ProfileCard',
+    title: 'entities/ProfileCard/redesigned',
     component: ProfileCardRedesigned,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof ProfileCardRedesigned>;
-// TODO update
+
 const Template: ComponentStory<typeof ProfileCardRedesigned> = (args) => <ProfileCardRedesigned {...args} />;
 
 export const Light = Template.bind({});

@@ -1,5 +1,5 @@
 .Icon {
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     color: var(--icon-redesigned);
 }
 
@@ -16,4 +16,3 @@
 button:hover .Icon {
     color: var(--accent-redesigned);
 }
-
